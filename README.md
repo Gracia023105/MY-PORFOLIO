@@ -1,4 +1,4 @@
-# 👩‍💻 MARY GRACE MONTEPALCO — PERSONAL PORTFOLIO
+# 👩‍💻 MARY GRACE B. MONTEPALCO — PERSONAL PORTFOLIO
 A responsive, static portfolio built with HTML, CSS, and vanilla JavaScript. Designed to work locally and on GitHub Pages.
 
 ---
