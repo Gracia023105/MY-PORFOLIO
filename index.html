@@ -26,37 +26,36 @@
             position: relative;
         }
 
-        /* 🌸 ANIME BACKGROUND CHARACTER WITH NEON PINK GLOW/SINAG 🌸 */
+        /* 🌸 ANIME BACKGROUND CHARACTER WITH NEON PINK SINAG 🌸 */
         .anime-bg-container {
             position: fixed;
-            left: 0;
+            left: -20px;
             bottom: 0;
             top: 0;
-            width: 450px;
+            width: 420px;
             pointer-events: none;
-            z-index: 0;
-            opacity: 0.45;
+            z-index: 1;
+            opacity: 0.5;
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
         }
 
         .anime-bg-img {
-            height: 90vh;
+            height: 92vh;
             max-width: 100%;
             object-fit: contain;
             object-position: left bottom;
-            /* Ginagawang Neon Pink Sinag at Glow ang Character */
-            filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.8)) sepia(100%) hue-rotate(290deg) saturate(500%);
+            filter: drop-shadow(0 0 20px #ff007f) drop-shadow(0 0 45px rgba(255, 0, 127, 0.8)) sepia(100%) hue-rotate(290deg) saturate(500%);
             animation: pinkPulse 3s infinite alternate;
         }
 
         @keyframes pinkPulse {
             0% {
-                filter: drop-shadow(0 0 15px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.6)) sepia(100%) hue-rotate(290deg) saturate(400%);
+                filter: drop-shadow(0 0 15px #ff007f) drop-shadow(0 0 30px rgba(255, 0, 127, 0.6)) sepia(100%) hue-rotate(290deg) saturate(400%);
             }
             100% {
-                filter: drop-shadow(0 0 35px #ff007f) drop-shadow(0 0 70px rgba(255, 0, 127, 0.9)) sepia(100%) hue-rotate(290deg) saturate(600%);
+                filter: drop-shadow(0 0 30px #ff007f) drop-shadow(0 0 60px rgba(255, 0, 127, 0.9)) sepia(100%) hue-rotate(290deg) saturate(600%);
             }
         }
 
@@ -129,63 +128,34 @@
             cursor: pointer;
         }
 
-        /* Liquid Water Glow on Hover */
-        .pink-card::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(255, 0, 127, 0.35) 0%, rgba(255, 0, 127, 0) 70%);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease-out, height 0.6s ease-out;
-            pointer-events: none;
-        }
-
-        .pink-card:hover::before {
-            width: 700px;
-            height: 700px;
-        }
-
         .pink-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 0 35px var(--neon-pink), inset 0 0 25px rgba(255, 0, 127, 0.3);
         }
 
-        /* Cute Peeking Anime Girl Effect on Hover */
-        .pink-card::after {
-            content: '👧🏻✨';
-            position: absolute;
-            right: 20px;
-            bottom: -55px;
-            font-size: 3.2rem;
-            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
-            opacity: 0;
-            pointer-events: none;
-            filter: drop-shadow(0 0 12px var(--neon-pink));
-        }
-
-        .pink-card:hover::after {
-            bottom: 12px;
-            opacity: 1;
-        }
-
-        /* Water Ripple Click Effect */
-        .ripple {
+        /* 💧 WATER DROP RIPPLE EFFECT ON ARROW MOUSE HOVER 💧 */
+        .hover-ripple {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 0, 127, 0.5);
+            background: radial-gradient(circle, rgba(255, 0, 127, 0.6) 0%, rgba(255, 0, 127, 0) 70%);
+            border: 1px solid rgba(255, 0, 127, 0.8);
             transform: scale(0);
-            animation: ripple-effect 0.6s linear;
+            animation: waterDropRipple 0.8s ease-out forwards;
             pointer-events: none;
         }
 
-        @keyframes ripple-effect {
-            to {
-                transform: scale(4);
+        @keyframes waterDropRipple {
+            0% {
+                width: 0px;
+                height: 0px;
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                width: 350px;
+                height: 350px;
                 opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
             }
         }
 
@@ -404,7 +374,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.25; width: 300px; }
+            .anime-bg-container { opacity: 0.25; width: 280px; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -413,9 +383,9 @@
 </head>
 <body>
 
-    <!-- 🌸 FIXED ANIME BACKGROUND CHARACTER WITH PINK NEON GLOW 🌸 -->
+    <!-- 🌸 FIXED ANIME BACKGROUND CHARACTER WITH PINK NEON SINAG 🌸 -->
     <div class="anime-bg-container">
-        <img src="anime.png" alt="Anime Character Background" class="anime-bg-img">
+        <img src="https://raw.githubusercontent.com/mizuchi091/My-portfolio/main/image_05107d.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='https://i.imgur.com/3Z6K8Y9.png';">
     </div>
 
     <!-- Navigation Bar -->
@@ -431,7 +401,7 @@
 
     <div class="container">
 
-        <!-- HERO SECTION: NAME, COURSE, AND ABOUT ME -->
+        <!-- UNANG SCROLL: NAME, COURSE, AND ABOUT ME -->
         <div class="pink-card" id="about">
             <div class="hero-flex">
                 <div class="hero-left">
@@ -465,7 +435,7 @@
             </div>
         </div>
 
-        <!-- PROGRESS SECTION -->
+        <!-- SECOND SCROLL: PROGRESS SECTION -->
         <div class="pink-card" id="progress">
             <div class="tag-sub">OPEN SOURCE / PROFILE</div>
             <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem;">Follow the <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">progress.</span></h2>
@@ -477,12 +447,12 @@
             </a>
         </div>
 
-        <!-- SKILLS SECTION -->
+        <!-- 02 / TECHNICAL COMPETENCIES (SKILLS & TOOLS ONLY) -->
         <div class="pink-card" id="skills">
             <div class="tag-sub">02 / TECHNICAL COMPETENCIES</div>
-            <h2 style="font-size: 1.8rem; margin-top: 0.3rem;">Project <span style="color: var(--neon-pink); text-shadow: 0 0 12px var(--neon-pink);">Nexus</span> & Skills</h2>
+            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Skills & <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Tools</span></h2>
             <p style="color: var(--text-sub); margin-top: 0.5rem;">
-                Structured software architecture, repository management, Cisco networking, Java programming, and automated GitHub Pages deployment.
+                Core competencies and software tools used in Computer Engineering coursework:
             </p>
             <div class="skills-badges">
                 <div class="badge">☕ Java Programming</div>
@@ -531,25 +501,33 @@
 
     </div>
 
-    <!-- Script for Water Ripple Click Effect -->
+    <!-- Script for Dynamic Water Ripple Drop on Arrow Hover -->
     <script>
         document.querySelectorAll('.pink-card').forEach(card => {
-            card.addEventListener('click', function (e) {
-                const ripple = document.createElement('span');
-                ripple.classList.add('ripple');
-                
-                const rect = card.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
-                ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
-                
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+            let lastRippleTime = 0;
+
+            card.addEventListener('mousemove', function (e) {
+                const now = Date.now();
+                // Creates water drop ripple every 200ms when mouse moves over any side of the box
+                if (now - lastRippleTime > 200) {
+                    lastRippleTime = now;
+
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('hover-ripple');
+
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 800);
+                }
             });
         });
     </script>
