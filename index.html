@@ -26,14 +26,14 @@
             position: relative;
         }
 
-        /* 🌸 PERFECT TRANSPARENT ANIME CUTOUT WITH NEON PINK GLOW 🌸 */
+        /* 🌸 MALAKING TRANSPARENT ANIME CHARACTER FIT SA BUONG LEFT SIDE 🌸 */
         .anime-bg-container {
             position: fixed;
             left: 0;
             bottom: 0;
             top: 0;
-            width: 42vw;
-            max-width: 550px;
+            width: 50vw;
+            max-width: 680px;
             pointer-events: none;
             z-index: 1;
             opacity: 0.75;
@@ -45,19 +45,19 @@
         .anime-bg-img {
             height: 100vh;
             width: 100%;
-            object-fit: contain;
-            object-position: left bottom;
-            /* Malinis na Neon Pink Glow Effect sa paligid ng transparent character */
-            filter: drop-shadow(0 0 20px #ff007f) drop-shadow(0 0 45px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
+            object-fit: cover;
+            object-position: left center;
+            transform: scale(1.08); /* Pinatangkad at pinalaki nang kaunti para sagad sa gilid */
+            filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
             animation: pinkPulse 3s infinite alternate;
         }
 
         @keyframes pinkPulse {
             0% {
-                filter: drop-shadow(0 0 15px #ff007f) drop-shadow(0 0 30px rgba(255, 0, 127, 0.65)) sepia(100%) hue-rotate(290deg) saturate(450%);
+                filter: drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.65)) sepia(100%) hue-rotate(290deg) saturate(450%);
             }
             100% {
-                filter: drop-shadow(0 0 35px #ff007f) drop-shadow(0 0 70px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%);
+                filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%);
             }
         }
 
@@ -389,7 +389,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.35; width: 280px; }
+            .anime-bg-container { opacity: 0.35; width: 320px; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -398,9 +398,8 @@
 </head>
 <body>
 
-    <!-- 🌸 TRANSPARENT ANIME BACKGROUND (NO WHITE OR BLACK BACKGROUND BOX) 🌸 -->
+    <!-- 🌸 MALAKING TRANSPARENT ANIME BACKGROUND 🌸 -->
     <div class="anime-bg-container">
-        <!-- Siguraduhing ang file name sa GitHub ay 'anime.png' o 'anime-removebg-preview.png' -->
         <img src="anime-removebg-preview.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
 
