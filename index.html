@@ -140,4 +140,395 @@
             background: radial-gradient(circle, rgba(255, 0, 127, 0.6) 0%, rgba(255, 0, 127, 0) 70%);
             border: 1px solid rgba(255, 0, 127, 0.8);
             transform: scale(0);
-            animation: waterDropRipple 0.8s ease
+            animation: waterDropRipple 0.8s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes waterDropRipple {
+            0% {
+                width: 0px;
+                height: 0px;
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                width: 350px;
+                height: 350px;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /* HERO SECTION LAYOUT */
+        .hero-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            min-height: 65vh;
+        }
+
+        .hero-left {
+            flex: 1.2;
+            min-width: 300px;
+        }
+
+        .tag-sub {
+            color: var(--neon-pink);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 8px var(--neon-pink);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-pink);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--neon-pink);
+            display: inline-block;
+        }
+
+        .hero-name {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0.6rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-name span {
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .hero-course {
+            font-size: 1.25rem;
+            color: #f8fafc;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
+        }
+
+        .hero-about {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+        }
+
+        .btn-pink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--neon-pink);
+            color: #000;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 0 20px var(--neon-pink);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-pink:hover {
+            box-shadow: 0 0 35px var(--neon-pink), 0 0 50px var(--neon-pink);
+            transform: scale(1.03);
+        }
+
+        .btn-outline-pink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 2px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-pink:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-pink);
+        }
+
+        /* Right Side Graphic Box */
+        .side-box {
+            flex: 0.8;
+            background: rgba(6, 8, 14, 0.85);
+            border: 1.5px solid var(--neon-pink);
+            border-radius: 18px;
+            padding: 2.2rem;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.15);
+            min-width: 250px;
+        }
+
+        .avatar-circle {
+            width: 125px;
+            height: 125px;
+            margin: 0 auto 1.2rem;
+            border-radius: 50%;
+            border: 2px dashed var(--neon-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            color: var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+            animation: rotateBorder 12s linear infinite;
+        }
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .skills-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .badge {
+            background: #06080e;
+            border: 1.5px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 0.6rem 1.3rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px rgba(255,0,127,0.2);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-box {
+            background: #06080e;
+            border: 1.5px solid var(--neon-pink);
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        .contact-box span.title {
+            font-size: 0.75rem;
+            color: #ff80bf;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .contact-box span.val {
+            font-size: 0.9rem;
+            font-weight: bold;
+            word-break: break-all;
+        }
+
+        .contact-box:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 0 0 25px var(--neon-pink);
+            transform: translateY(-3px);
+        }
+
+        .contact-box:hover i, .contact-box:hover span.title {
+            color: #000;
+            text-shadow: none;
+        }
+
+        @media(max-width: 900px) {
+            .anime-bg-container { opacity: 0.25; width: 280px; }
+            .hero-flex { flex-direction: column; text-align: center; }
+            .hero-name { font-size: 2.2rem; }
+            .side-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌸 FIXED ANIME BACKGROUND CHARACTER WITH PINK NEON SINAG 🌸 -->
+    <div class="anime-bg-container">
+        <img src="anime.png" alt="Anime Character Background" class="anime-bg-img">
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="brand-logo">MGM</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#progress">Progress</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- UNANG SCROLL: NAME, COURSE, AND ABOUT ME -->
+        <div class="pink-card" id="about">
+            <div class="hero-flex">
+                <div class="hero-left">
+                    <div class="tag-sub">
+                        <span class="status-dot"></span> COMPUTER ENGINEERING STUDENT
+                    </div>
+                    
+                    <h1 class="hero-name">Hi, I'm <span>Mary Grace B. Montepalco</span></h1>
+                    <div class="hero-course">Bachelor of Science in Computer Engineering</div>
+                    
+                    <p class="hero-about">
+                        I am an undergraduate Computer Engineering student at ICCT Colleges passionate about software design, Cisco networking simulation, Java programming, and web architecture. Currently building and integrating software architecture for <strong>Project Nexus</strong>.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#progress" class="btn-pink">
+                            Explore My Progress <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="#contact" class="btn-outline-pink">Get In Touch</a>
+                    </div>
+                </div>
+
+                <div class="side-box">
+                    <div class="avatar-circle">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="tag-sub" style="justify-content: center;">STUDENT PORTFOLIO</div>
+                    <h3 style="color: #f8fafc; font-size: 1.2rem;">ICCT Colleges</h3>
+                    <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.4rem;">Computer Engineering</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECOND SCROLL: PROGRESS SECTION -->
+        <div class="pink-card" id="progress">
+            <div class="tag-sub">OPEN SOURCE / PROFILE</div>
+            <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem;">Follow the <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">progress.</span></h2>
+            <p style="color: var(--text-sub); font-size: 1rem; margin-bottom: 1.5rem;">
+                Explore my GitHub profile for repositories, Java coursework experiments, Cisco Packet Tracer setups, and Project Nexus updates.
+            </p>
+            <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-pink">
+                View My GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+
+        <!-- 02 / TECHNICAL COMPETENCIES (SKILLS & TOOLS ONLY) -->
+        <div class="pink-card" id="skills">
+            <div class="tag-sub">02 / TECHNICAL COMPETENCIES</div>
+            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Skills & <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Tools</span></h2>
+            <p style="color: var(--text-sub); margin-top: 0.5rem;">
+                Core competencies and software tools used in Computer Engineering coursework:
+            </p>
+            <div class="skills-badges">
+                <div class="badge">☕ Java Programming</div>
+                <div class="badge">🐙 Git & GitHub Workflows</div>
+                <div class="badge">🌐 Cisco Packet Tracer</div>
+                <div class="badge">📐 Software Architecture</div>
+                <div class="badge">🎨 Canva Design</div>
+                <div class="badge">🍞 Bread & Pastry NC II</div>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div class="pink-card" id="contact">
+            <div class="tag-sub">03 / GET IN TOUCH</div>
+            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Have something to <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">talk about?</span></h2>
+            <p style="color: var(--text-sub); margin-top: 0.5rem;">
+                I'm open to connecting with people who share an interest in technology, software engineering, and learning.
+            </p>
+
+            <div class="contact-grid">
+                <a href="mailto:marygracemontepalco25@gmail.com" class="contact-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="title">Email Address</span>
+                    <span class="val">marygracemontepalco25@gmail.com</span>
+                </a>
+
+                <a href="tel:09517054993" class="contact-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="title">Phone Number</span>
+                    <span class="val">0951-705-4993</span>
+                </a>
+
+                <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="contact-box">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="title">Instagram</span>
+                    <span class="val">@graciamontepalco</span>
+                </a>
+
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="contact-box">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="title">GitHub Profile</span>
+                    <span class="val">Gracia023105</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script for Dynamic Water Ripple Drop on Arrow Hover -->
+    <script>
+        document.querySelectorAll('.pink-card').forEach(card => {
+            let lastRippleTime = 0;
+
+            card.addEventListener('mousemove', function (e) {
+                const now = Date.now();
+                if (now - lastRippleTime > 200) {
+                    lastRippleTime = now;
+
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('hover-ripple');
+
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 800);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
