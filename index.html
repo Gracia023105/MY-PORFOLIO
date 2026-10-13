@@ -26,17 +26,16 @@
             position: relative;
         }
 
-        /* 🌸 ANIME BACKGROUND STABLE & FIT SA LEFT SIDE 🌸 */
+        /* 🌸 TRANSPARENT ANIME CHARACTER CUTOUT NA WALANG BLACK BACKGROUND 🌸 */
         .anime-bg-container {
             position: fixed;
-            left: 0;
+            left: -10px;
             bottom: 0;
             top: 0;
             width: 45vw;
-            max-width: 600px;
+            max-width: 580px;
             pointer-events: none;
             z-index: 1;
-            opacity: 0.6;
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
@@ -46,17 +45,19 @@
             height: 100vh;
             width: 100%;
             object-fit: cover;
-            object-position: left center;
-            filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
+            object-position: left bottom;
+            /* Binubura ang itim na background gamit ang contrast/brightness manipulation at pinapalitan ng neon pink glow */
+            filter: contrast(200%) brightness(120%) drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.9)) sepia(100%) hue-rotate(290deg) saturate(600%);
+            mix-blend-mode: screen;
             animation: pinkPulse 3s infinite alternate;
         }
 
         @keyframes pinkPulse {
             0% {
-                filter: drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.7)) sepia(100%) hue-rotate(290deg) saturate(450%);
+                filter: contrast(200%) brightness(110%) drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.7)) sepia(100%) hue-rotate(290deg) saturate(500%);
             }
             100% {
-                filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%);
+                filter: contrast(220%) brightness(130%) drop-shadow(0 0 35px #ff007f) drop-shadow(0 0 75px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(700%);
             }
         }
 
@@ -301,7 +302,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* 🌸 SKILLS & TOOLS BADGES WITH NEON PINK HOVER EFFECT 🌸 */
+        /* 🌸 SKILLS & TOOLS BADGES WITH NEON PINK HOVER GLOW 🌸 */
         .skills-badges {
             display: flex;
             flex-wrap: wrap;
@@ -388,7 +389,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.3; width: 300px; }
+            .anime-bg-container { opacity: 0.3; width: 280px; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -397,7 +398,7 @@
 </head>
 <body>
 
-    <!-- 🌸 ANIME BACKGROUND CHARACTER 🌸 -->
+    <!-- 🌸 ANIME CHARACTER CUTOUT WITH NEON PINK GLOW (NO BLACK BACKGROUND) 🌸 -->
     <div class="anime-bg-container">
         <img src="anime.png" alt="Anime Character Background" class="anime-bg-img">
     </div>
