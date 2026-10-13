@@ -26,20 +26,21 @@
             position: relative;
         }
 
-        /* 🌸 MALAKING ANIME BACKGROUND CHARACTER NA FIT SA LEFT SIDE 🌸 */
+        /* 🌸 ANIME CHARACTER FIT SA LEFT SIDE (NO PICTURE BACKGROUND / NEON PINK SINAG ONLY) 🌸 */
         .anime-bg-container {
             position: fixed;
             left: 0;
             bottom: 0;
             top: 0;
-            width: 48vw;
-            max-width: 650px;
+            width: 45vw;
+            max-width: 600px;
             pointer-events: none;
             z-index: 1;
-            opacity: 0.6;
+            opacity: 0.65;
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
+            mix-blend-mode: screen; /* Inaalis ang dark box background ng picture */
         }
 
         .anime-bg-img {
@@ -47,16 +48,16 @@
             width: 100%;
             object-fit: cover;
             object-position: left center;
-            filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
+            filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.9)) sepia(100%) hue-rotate(290deg) saturate(600%);
             animation: pinkPulse 3s infinite alternate;
         }
 
         @keyframes pinkPulse {
             0% {
-                filter: drop-shadow(0 0 20px #ff007f) drop-shadow(0 0 40px rgba(255, 0, 127, 0.7)) sepia(100%) hue-rotate(290deg) saturate(450%);
+                filter: drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.7)) sepia(100%) hue-rotate(290deg) saturate(500%);
             }
             100% {
-                filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%);
+                filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(700%);
             }
         }
 
@@ -134,12 +135,12 @@
             box-shadow: 0 0 35px var(--neon-pink), inset 0 0 25px rgba(255, 0, 127, 0.3);
         }
 
-        /* 💧 WATER DROP RIPPLE EFFECT ON ARROW MOUSE HOVER 💧 */
+        /* 💧 WATER DROP RIPPLE ANIMATION 💧 */
         .hover-ripple {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 0, 127, 0.6) 0%, rgba(255, 0, 127, 0) 70%);
-            border: 1px solid rgba(255, 0, 127, 0.8);
+            background: radial-gradient(circle, rgba(255, 0, 127, 0.7) 0%, rgba(255, 0, 127, 0) 70%);
+            border: 1px solid var(--neon-pink);
             transform: scale(0);
             animation: waterDropRipple 0.8s ease-out forwards;
             pointer-events: none;
@@ -153,8 +154,8 @@
                 transform: translate(-50%, -50%) scale(0);
             }
             100% {
-                width: 350px;
-                height: 350px;
+                width: 380px;
+                height: 380px;
                 opacity: 0;
                 transform: translate(-50%, -50%) scale(1);
             }
@@ -301,189 +302,36 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* 🌸 SKILLS & TOOLS BADGES WITH NEON PINK HOVER EFFECT 🌸 */
         .skills-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1.2rem;
+            gap: 0.9rem;
+            margin-top: 1.4rem;
         }
 
         .badge {
             background: #06080e;
             border: 1.5px solid var(--neon-pink);
             color: var(--neon-pink);
-            padding: 0.6rem 1.3rem;
+            padding: 0.7rem 1.4rem;
             border-radius: 30px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             box-shadow: 0 0 10px rgba(255,0,127,0.2);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-
-        .contact-box {
-            background: #06080e;
-            border: 1.5px solid var(--neon-pink);
-            border-radius: 12px;
-            padding: 1.2rem;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
             transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
+            cursor: pointer;
+            user-select: none;
         }
 
-        .contact-box i {
-            font-size: 2rem;
-            color: var(--neon-pink);
-            text-shadow: 0 0 10px var(--neon-pink);
-        }
-
-        .contact-box span.title {
-            font-size: 0.75rem;
-            color: #ff80bf;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .contact-box span.val {
-            font-size: 0.9rem;
-            font-weight: bold;
-            word-break: break-all;
-        }
-
-        .contact-box:hover {
+        .badge:hover {
             background: var(--neon-pink);
             color: #000;
-            box-shadow: 0 0 25px var(--neon-pink);
-            transform: translateY(-3px);
+            box-shadow: 0 0 25px var(--neon-pink), 0 0 40px var(--neon-pink);
+            transform: scale(1.08) translateY(-3px);
         }
 
-        .contact-box:hover i, .contact-box:hover span.title {
-            color: #000;
-            text-shadow: none;
-        }
-
-        @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.25; width: 320px; }
-            .hero-flex { flex-direction: column; text-align: center; }
-            .hero-name { font-size: 2.2rem; }
-            .side-box { width: 100%; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 🌸 MALAKING ANIME BACKGROUND CHARACTER NA FIT SA LEFT SIDE 🌸 -->
-    <div class="anime-bg-container">
-        <img src="anime.png" alt="Anime Character Background" class="anime-bg-img">
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="brand-logo">MGM</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#progress">Progress</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-
-        <!-- UNANG SCROLL: NAME, COURSE, AND ABOUT ME -->
-        <div class="pink-card" id="about">
-            <div class="hero-flex">
-                <div class="hero-left">
-                    <div class="tag-sub">
-                        <span class="status-dot"></span> COMPUTER ENGINEERING STUDENT
-                    </div>
-                    
-                    <h1 class="hero-name">Hi, I'm <span>Mary Grace B. Montepalco</span></h1>
-                    <div class="hero-course">Bachelor of Science in Computer Engineering</div>
-                    
-                    <p class="hero-about">
-                        I am an undergraduate Computer Engineering student at ICCT Colleges passionate about software design, Cisco networking simulation, Java programming, and web architecture. Currently building and integrating software architecture for <strong>Project Nexus</strong>.
-                    </p>
-
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="#progress" class="btn-pink">
-                            Explore My Progress <i class="fa-solid fa-arrow-down"></i>
-                        </a>
-                        <a href="#contact" class="btn-outline-pink">Get In Touch</a>
-                    </div>
-                </div>
-
-                <div class="side-box">
-                    <div class="avatar-circle">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <div class="tag-sub" style="justify-content: center;">STUDENT PORTFOLIO</div>
-                    <h3 style="color: #f8fafc; font-size: 1.2rem;">ICCT Colleges</h3>
-                    <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.4rem;">Computer Engineering</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECOND SCROLL: PROGRESS SECTION -->
-        <div class="pink-card" id="progress">
-            <div class="tag-sub">OPEN SOURCE / PROFILE</div>
-            <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem;">Follow the <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">progress.</span></h2>
-            <p style="color: var(--text-sub); font-size: 1rem; margin-bottom: 1.5rem;">
-                Explore my GitHub profile for repositories, Java coursework experiments, Cisco Packet Tracer setups, and Project Nexus updates.
-            </p>
-            <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-pink">
-                View My GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-        </div>
-
-        <!-- 02 / TECHNICAL COMPETENCIES (SKILLS & TOOLS ONLY) -->
-        <div class="pink-card" id="skills">
-            <div class="tag-sub">02 / TECHNICAL COMPETENCIES</div>
-            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Skills & <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Tools</span></h2>
-            <p style="color: var(--text-sub); margin-top: 0.5rem;">
-                Core competencies and software tools used in Computer Engineering coursework:
-            </p>
-            <div class="skills-badges">
-                <div class="badge">☕ Java Programming</div>
-                <div class="badge">🐙 Git & GitHub Workflows</div>
-                <div class="badge">🌐 Cisco Packet Tracer</div>
-                <div class="badge">📐 Software Architecture</div>
-                <div class="badge">🎨 Canva Design</div>
-                <div class="badge">🍞 Bread & Pastry NC II</div>
-            </div>
-        </div>
-
-        <!-- CONTACT SECTION -->
-        <div class="pink-card" id="contact">
-            <div class="tag-sub">03 / GET IN TOUCH</div>
-            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Have something to <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">talk about?</span></h2>
-            <p style="color: var(--text-sub); margin-top: 0.5rem;">
-                I'm open to connecting with people who share an interest in technology, software engineering, and learning.
-            </p>
-
-            <div class="contact-grid">
-                <a href="mailto:marygracemontepalco25@gmail.com" class="contact-box">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span class="title">Email Address</span>
-                    <span class="val">marygracemontepalco25@gmail.com</span>
-                </a>
-
-                <a href="tel:09517054993" class="contact-box">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="title">Phone Number</span>
-                    <span class="val">0951-705-4993</span>
-                </a>
-
-                <a href="
+        /* CONTACT SECTION GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax
