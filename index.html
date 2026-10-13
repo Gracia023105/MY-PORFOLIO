@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mary Grace Montepalco | Cyber Portfolio</title>
+    <title>Mary Grace B. Montepalco | Cyber Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --neon-pink: #ff007f;
             --pink-glow: rgba(255, 0, 127, 0.6);
-            --pink-bg: rgba(255, 0, 127, 0.05);
             --card-bg: #0d111a;
             --bg-color: #06080e;
             --text-white: #f8fafc;
@@ -39,6 +38,9 @@
             border-radius: 40px;
             box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
             backdrop-filter: blur(10px);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
         }
 
         .brand-logo {
@@ -76,7 +78,7 @@
             gap: 2rem;
         }
 
-        /* Water Ripple & Neon Pink Card Style */
+        /* Neon Pink Card Base & Water Ripple Effect */
         .pink-card {
             background: var(--card-bg);
             border: 2px solid var(--neon-pink);
@@ -89,7 +91,7 @@
             cursor: pointer;
         }
 
-        /* Liquid Wave Effect on Hover */
+        /* Liquid Wave Background on Hover */
         .pink-card::before {
             content: '';
             position: absolute;
@@ -114,7 +116,25 @@
             box-shadow: 0 0 35px var(--neon-pink), inset 0 0 25px rgba(255, 0, 127, 0.2);
         }
 
-        /* Water Ripple Animation Effect on Click */
+        /* Cute Peeking Anime Girl Effect on Arrow Hover */
+        .pink-card::after {
+            content: '👧🏻✨'; /* Cute Anime Girl Icon Emoji */
+            position: absolute;
+            right: 15px;
+            bottom: -50px;
+            font-size: 3rem;
+            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            filter: drop-shadow(0 0 10px var(--neon-pink));
+        }
+
+        .pink-card:hover::after {
+            bottom: 10px; /* Sumisilip mula sa ibabang kanan ng box */
+            opacity: 1;
+        }
+
+        /* Water Ripple Click Effect */
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -131,72 +151,70 @@
             }
         }
 
-        /* Hero / Profile Section Layout (Follow the Progress Section) */
-        .profile-flex {
+        /* HERO SECTION LAYOUT (Left Side Name & Details) */
+        .hero-flex {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .profile-left {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .avatar-circle {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 2px dashed var(--neon-pink);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            color: var(--neon-pink);
-            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
-            animation: rotateBorder 12s linear infinite;
-            flex-shrink: 0;
-        }
-
-        @keyframes rotateBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .hero-left {
+            flex: 1.2;
+            min-width: 300px;
         }
 
         .tag-sub {
             color: var(--neon-pink);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             text-shadow: 0 0 8px var(--neon-pink);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .main-title {
-            font-size: 2.2rem;
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-pink);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--neon-pink);
+            display: inline-block;
+        }
+
+        .hero-name {
+            font-size: 2.8rem;
             font-weight: 900;
+            line-height: 1.1;
             margin-bottom: 0.5rem;
-            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
-        .main-title span {
+        .hero-name span {
             color: var(--neon-pink);
-            text-shadow: 0 0 15px var(--neon-pink);
+            text-shadow: 0 0 20px var(--neon-pink);
         }
 
-        .desc-text {
+        .hero-course {
+            font-size: 1.2rem;
+            color: #f8fafc;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+        }
+
+        .hero-about {
             color: var(--text-sub);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.7;
             margin-bottom: 1.5rem;
         }
 
-        /* Neon Pink Buttons */
         .btn-pink {
             display: inline-flex;
             align-items: center;
@@ -241,48 +259,48 @@
             box-shadow: 0 0 30px var(--neon-pink);
         }
 
-        /* Right Side Small Box (GitHub Profile Box) */
-        .side-profile-box {
-            background: rgba(6, 8, 14, 0.8);
+        /* Right Side Animated Profile Box */
+        .side-box {
+            flex: 0.8;
+            background: rgba(6, 8, 14, 0.85);
             border: 1px solid var(--neon-pink);
-            border-radius: 14px;
-            padding: 1.5rem;
-            min-width: 240px;
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.15);
+            min-width: 250px;
         }
 
-        .side-profile-box h4 {
-            color: #f8fafc;
-            font-size: 1.2rem;
-            margin: 0.3rem 0;
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--neon-pink);
+        .avatar-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--neon-pink);
-            margin-right: 6px;
-        }
-
-        /* Contact Section (Have something to talk about) */
-        .contact-flex {
+            border: 2px dashed var(--neon-pink);
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+            animation: rotateBorder 12s linear infinite;
         }
 
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Grid Layouts for Skills & Contacts */
         .action-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
         }
 
         .info-list {
-            margin-top: 1rem;
+            margin-top: 1.2rem;
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
@@ -295,16 +313,34 @@
             text-shadow: 0 0 6px var(--neon-pink);
         }
 
+        .skills-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: #06080e;
+            border: 1.5px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px rgba(255,0,127,0.2);
+        }
+
         @media(max-width: 768px) {
-            .profile-flex { flex-direction: column; }
-            .profile-left { flex-direction: column; text-align: center; }
-            .side-profile-box { width: 100%; }
+            .hero-flex { flex-direction: column; text-align: center; }
+            .hero-name { font-size: 2.2rem; }
+            .side-box { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation -->
+    <!-- Top Navigation Header -->
     <nav>
         <div class="brand-logo">MGM</div>
         <ul class="nav-links">
@@ -317,91 +353,35 @@
 
     <div class="container">
 
-        <!-- BOX 1: MAIN PROFILE / FOLLOW THE PROGRESS -->
+        <!-- MAIN HERO BOX: LEFT SIDE NAME & ABOUT ME -->
         <div class="pink-card" id="about">
-            <div class="profile-flex">
-                <div class="profile-left">
+            <div class="hero-flex">
+                
+                <div class="hero-left">
+                    <div class="tag-sub">
+                        <span class="status-dot"></span> COMPUTER ENGINEERING STUDENT
+                    </div>
+                    
+                    <!-- Left Side Malaking Name -->
+                    <h1 class="hero-name">Hi, I'm <span>Mary Grace B. Montepalco</span></h1>
+                    
+                    <!-- Course Sa Baba ng Name -->
+                    <div class="hero-course">Bachelor of Science in Computer Engineering</div>
+                    
+                    <!-- About Me Sa Baba ng Course -->
+                    <p class="hero-about">
+                        I am an undergraduate Computer Engineering student at ICCT Colleges passionate about software design, Cisco networking simulation, Java programming, and web architecture. Currently building and integrating software architecture for <strong>Project Nexus</strong>.
+                    </p>
+
+                    <div class="action-buttons">
+                        <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-pink">
+                            Explore My Projects <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn-outline-pink">Get In Touch</a>
+                    </div>
+                </div>
+
+                <!-- Right Side Badge Box -->
+                <div class="side-box">
                     <div class="avatar-circle">
                         <i class="fa-brands fa-github"></i>
-                    </div>
-                    <div>
-                        <div class="tag-sub">COMPUTER ENGINEERING / PROFILE</div>
-                        <h1 class="main-title">Follow the <span>progress.</span></h1>
-                        <p class="desc-text">Explore my GitHub profile for computer engineering projects, Java coursework, network architecture, and future updates.</p>
-                        <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-pink">
-                            View My GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Small GitHub Profile Side Box -->
-                <div class="side-profile-box">
-                    <div class="tag-sub">GITHUB PROFILE</div>
-                    <h4>@Gracia023105</h4>
-                    <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.5rem;">
-                        <span class="status-dot"></span> Public Profile
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- BOX 2: SKILLS & PROJECTS -->
-        <div class="pink-card" id="projects">
-            <div class="tag-sub">02 / FEATURED ARCHITECTURE</div>
-            <h2 class="main-title" style="font-size: 1.8rem; margin-top: 0.3rem;">Project <span>Nexus</span> & Technical Stack</h2>
-            <p class="desc-text">Structured software architecture, repository management, Cisco Packet Tracer simulations, Java programming, and automated web deployment.</p>
-            <div class="action-buttons">
-                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-outline-pink">Project Nexus Repo <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-
-        <!-- BOX 3: CONTACT SECTION (HAVE SOMETHING TO TALK ABOUT) -->
-        <div class="pink-card" id="contact">
-            <div class="contact-flex">
-                <div>
-                    <div class="tag-sub">03 / GET IN TOUCH</div>
-                    <h2 class="main-title">Have something to <span>talk about?</span></h2>
-                    <p class="desc-text">I'm open to connecting with people who share an interest in technology, software engineering, and learning.</p>
-                </div>
-
-                <!-- Action Buttons: Email & GitHub -->
-                <div class="action-buttons">
-                    <a href="mailto:marygracemontepalco25@gmail.com" class="btn-pink">Email Me <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-outline-pink">GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="btn-outline-pink">Instagram <i class="fa-brands fa-instagram"></i></a>
-                </div>
-
-                <!-- Contact Info Details List -->
-                <div class="info-list">
-                    <div class="info-item"><i class="fa-solid fa-envelope"></i> marygracemontepalco25@gmail.com</div>
-                    <div class="info-item"><i class="fa-solid fa-phone"></i> 0951-705-4993</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Script para sa Click Water Ripple Effect -->
-    <script>
-        document.querySelectorAll('.pink-card').forEach(card => {
-            card.addEventListener('click', function (e) {
-                const ripple = document.createElement('span');
-                ripple.classList.add('ripple');
-                
-                const rect = card.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
-                ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
-                
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-    </script>
-</body>
-</html>
