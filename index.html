@@ -26,16 +26,17 @@
             position: relative;
         }
 
-        /* 🌸 PURE TRANSPARENT CUTOUT: NAWALA ANG PUTI AT ITIM NA BACKGROUND NG PICTURE 🌸 */
+        /* 🌸 PERFECT TRANSPARENT ANIME CUTOUT WITH NEON PINK GLOW 🌸 */
         .anime-bg-container {
             position: fixed;
-            left: -20px;
+            left: 0;
             bottom: 0;
             top: 0;
-            width: 45vw;
-            max-width: 580px;
+            width: 42vw;
+            max-width: 550px;
             pointer-events: none;
             z-index: 1;
+            opacity: 0.75;
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
@@ -44,20 +45,19 @@
         .anime-bg-img {
             height: 100vh;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: left bottom;
-            /* Ang lighten at screen mode ang kusang nagtatanggal ng white/bright square backgrounds, leaving only the dark lines glowing pink */
-            mix-blend-mode: lighten;
-            filter: drop-shadow(0 0 20px #ff007f) drop-shadow(0 0 40px rgba(255, 0, 127, 0.8)) sepia(100%) hue-rotate(290deg) saturate(500%);
+            /* Malinis na Neon Pink Glow Effect sa paligid ng transparent character */
+            filter: drop-shadow(0 0 20px #ff007f) drop-shadow(0 0 45px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
             animation: pinkPulse 3s infinite alternate;
         }
 
         @keyframes pinkPulse {
             0% {
-                filter: drop-shadow(0 0 15px #ff007f) drop-shadow(0 0 30px rgba(255, 0, 127, 0.6)) sepia(100%) hue-rotate(290deg) saturate(400%);
+                filter: drop-shadow(0 0 15px #ff007f) drop-shadow(0 0 30px rgba(255, 0, 127, 0.65)) sepia(100%) hue-rotate(290deg) saturate(450%);
             }
             100% {
-                filter: drop-shadow(0 0 30px #ff007f) drop-shadow(0 0 60px rgba(255, 0, 127, 0.95)) sepia(100%) hue-rotate(290deg) saturate(600%);
+                filter: drop-shadow(0 0 35px #ff007f) drop-shadow(0 0 70px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%);
             }
         }
 
@@ -389,7 +389,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.3; width: 280px; }
+            .anime-bg-container { opacity: 0.35; width: 280px; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -398,9 +398,10 @@
 </head>
 <body>
 
-    <!-- 🌸 ANIME BACKGROUND WITH LIGHTEN BLEND (NO WHITE/BLACK BOX BACKGROUND) 🌸 -->
+    <!-- 🌸 TRANSPARENT ANIME BACKGROUND (NO WHITE OR BLACK BACKGROUND BOX) 🌸 -->
     <div class="anime-bg-container">
-        <img src="anime.png" alt="Anime Character Background" class="anime-bg-img">
+        <!-- Siguraduhing ang file name sa GitHub ay 'anime.png' o 'anime-removebg-preview.png' -->
+        <img src="anime-removebg-preview.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
 
     <!-- Navigation Bar -->
