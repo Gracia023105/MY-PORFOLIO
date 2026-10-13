@@ -26,28 +26,28 @@
             position: relative;
         }
 
-        /* 🌸 MALAKING TRANSPARENT ANIME CHARACTER FIT SA BUONG LEFT SIDE 🌸 */
+        /* 🌸 EXTRA MALAPAD AT MALAKING ANIME CHARACTER SA BUONG LEFT SIDE 🌸 */
         .anime-bg-container {
             position: fixed;
-            left: 0;
+            left: -30px;
             bottom: 0;
             top: 0;
-            width: 50vw;
-            max-width: 680px;
+            width: 55vw;
+            max-width: 800px;
             pointer-events: none;
             z-index: 1;
             opacity: 0.75;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: flex-start;
         }
 
         .anime-bg-img {
             height: 100vh;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: left center;
-            transform: scale(1.08); /* Pinatangkad at pinalaki nang kaunti para sagad sa gilid */
+            transform: scale(1.35);
             filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
             animation: pinkPulse 3s infinite alternate;
         }
@@ -389,7 +389,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.35; width: 320px; }
+            .anime-bg-container { opacity: 0.35; width: 380px; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -398,7 +398,7 @@
 </head>
 <body>
 
-    <!-- 🌸 MALAKING TRANSPARENT ANIME BACKGROUND 🌸 -->
+    <!-- 🌸 EXTRA MALAPAD AT MALAKING ANIME BACKGROUND 🌸 -->
     <div class="anime-bg-container">
         <img src="anime-removebg-preview.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
@@ -416,19 +416,20 @@
 
     <div class="container">
 
-        <!-- UNANG SCROLL: NAME, COURSE, AND ABOUT ME -->
+        <!-- UNANG SCROLL: NAME, COURSE, AND NEW ABOUT ME -->
         <div class="pink-card" id="about">
             <div class="hero-flex">
                 <div class="hero-left">
                     <div class="tag-sub">
-                        <span class="status-dot"></span> COMPUTER ENGINEERING STUDENT
+                        <span class="status-dot"></span> GRADUATING COMPUTER ENGINEERING STUDENT
                     </div>
                     
                     <h1 class="hero-name">Hi, I'm <span>Mary Grace B. Montepalco</span></h1>
                     <div class="hero-course">Bachelor of Science in Computer Engineering</div>
                     
+                    <!-- 🌸 BAGONG NA-TRANSLATE NA ABOUT ME PARAGRAPH 🌸 -->
                     <p class="hero-about">
-                        I am an undergraduate Computer Engineering student at ICCT Colleges passionate about software design, Cisco networking simulation, Java programming, and web architecture. Currently building and integrating software architecture for <strong>Project Nexus</strong>.
+                        I am a graduating Bachelor of Science in Computer Engineering student at ICCT Colleges Cainta. I have a strong passion for web development and am eager to deepen my understanding of clean coding practices and core software logic. I am continuously exploring various development tools and applications to expand my technical skill set. Currently, I am actively building my knowledge through academic projects and hands-on practical applications.
                     </p>
 
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -444,8 +445,8 @@
                         <i class="fa-solid fa-laptop-code"></i>
                     </div>
                     <div class="tag-sub" style="justify-content: center;">STUDENT PORTFOLIO</div>
-                    <h3 style="color: #f8fafc; font-size: 1.2rem;">ICCT Colleges</h3>
-                    <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.4rem;">Computer Engineering</p>
+                    <h3 style="color: #f8fafc; font-size: 1.2rem;">ICCT Colleges Cainta</h3>
+                    <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.4rem;">BS Computer Engineering</p>
                 </div>
             </div>
         </div>
