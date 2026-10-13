@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mary Grace Montepalco | Neon Portfolio</title>
+    <title>Mary Grace Montepalco | Cyber Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body {
             background-color: #060913;
             color: #f8fafc;
-            padding: 2rem;
+            padding: 2rem 1rem;
             min-height: 100vh;
         }
         header {
@@ -25,10 +25,12 @@
             letter-spacing: 2px;
         }
         p.sub {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            color: #ff007f;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+            font-weight: bold;
         }
         .grid-container {
             max-width: 1100px;
@@ -40,7 +42,7 @@
         .neon-card {
             background: rgba(15, 23, 42, 0.85);
             border: 2px solid #00f0ff;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2rem;
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
             transition: all 0.3s ease;
@@ -56,6 +58,14 @@
         .neon-card.purple:hover {
             box-shadow: 0 0 35px #a855f7, inset 0 0 25px rgba(168, 85, 247, 0.3);
         }
+        .neon-card.pink-section {
+            border-color: #ff007f;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.25), inset 0 0 15px rgba(255, 0, 127, 0.1);
+            grid-column: span 2;
+        }
+        .neon-card.pink-section:hover {
+            box-shadow: 0 0 35px #ff007f, inset 0 0 25px rgba(255, 0, 127, 0.3);
+        }
         h2 {
             color: #00f0ff;
             font-size: 1.4rem;
@@ -65,15 +75,11 @@
             align-items: center;
             gap: 10px;
         }
-        .purple h2 {
-            color: #a855f7;
-            text-shadow: 0 0 8px #a855f7;
-        }
-        p {
-            color: #cbd5e1;
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
+        .purple h2 { color: #a855f7; text-shadow: 0 0 8px #a855f7; }
+        .pink-section h2 { color: #ff007f; text-shadow: 0 0 10px #ff007f; }
+
+        p { color: #cbd5e1; line-height: 1.7; font-size: 1.05rem; }
+
         .skills-row {
             grid-column: span 2;
             display: flex;
@@ -91,9 +97,61 @@
             font-weight: bold;
             box-shadow: 0 0 10px rgba(0,240,255,0.2);
         }
+
+        /* Separate Neon Pink Contact Cards Layout */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .contact-box {
+            background: #0d111a;
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .contact-box i {
+            font-size: 2rem;
+            color: #ff007f;
+            text-shadow: 0 0 12px #ff007f;
+        }
+        .contact-box span.title {
+            font-size: 0.8rem;
+            color: #ff80bf;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .contact-box span.val {
+            font-size: 0.95rem;
+            font-weight: bold;
+            word-break: break-all;
+        }
+        .contact-box:hover {
+            background: #ff007f;
+            color: #000000;
+            box-shadow: 0 0 30px #ff007f;
+            transform: translateY(-4px);
+        }
+        .contact-box:hover i, .contact-box:hover span.title {
+            color: #000000;
+            text-shadow: none;
+        }
+
         @media(max-width: 768px) {
             .grid-container { grid-template-columns: 1fr; }
-            .skills-row { grid-column: span 1; }
+            .skills-row, .neon-card.pink-section { grid-column: span 1; }
         }
     </style>
 </head>
@@ -101,21 +159,24 @@
 
     <header>
         <h1>MARY GRACE MONTEPALCO</h1>
-        <p class="sub">Computer Engineering Student | Tech Enthusiast</p>
+        <p class="sub">✨ Computer Engineering Student | Cyber Tech Enthusiast ✨</p>
     </header>
 
     <div class="grid-container">
         
+        <!-- ABOUT ME CARD -->
         <div class="neon-card">
             <h2><i class="fa-solid fa-microchip"></i> ABOUT ME</h2>
             <p>I am an undergraduate <strong>Computer Engineering</strong> student passionate about software design, version control, networking, and system development. Currently building and integrating software architecture for <span>Project Nexus</span>.</p>
         </div>
 
-        <div class="neon-card purple">
+        <!-- FEATURED PROJECTS CARD -->
+        <div class="cyber-card neon-card purple">
             <h2><i class="fa-solid fa-diagram-project"></i> FEATURED PROJECTS</h2>
             <p><strong>Project Nexus</strong> — GitHub Architecture & Portfolio Development project focused on structured software engineering, repository management, and collaboration workflows.</p>
         </div>
 
+        <!-- TECHNICAL SKILLS ROW -->
         <div class="neon-card skills-row">
             <div style="width: 100%; text-align: center; margin-bottom: 0.5rem;">
                 <h2 style="display: inline-block;"><i class="fa-solid fa-code"></i> TECHNICAL SKILLS</h2>
@@ -124,6 +185,42 @@
             <div class="badge" style="border-color: #a855f7; color: #a855f7;">🐙 Git & GitHub</div>
             <div class="badge">🌐 Packet Tracer</div>
             <div class="badge" style="border-color: #ff007f; color: #ff007f; box-shadow: 0 0 10px rgba(255,0,127,0.2);">📐 Software Design</div>
+        </div>
+
+        <!-- NEON PINK CONTACT & SOCIAL LINKS (SEPARATE BOXES) -->
+        <div class="neon-card pink-section">
+            <h2><i class="fa-solid fa-heart"></i> CONTACT & SOCIAL LINKS</h2>
+            <div class="contact-grid">
+                
+                <!-- Email Box -->
+                <a href="mailto:marygracemontepalco25@gmail.com" class="contact-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="title">Email Address</span>
+                    <span class="val">marygracemontepalco25@gmail.com</span>
+                </a>
+
+                <!-- Mobile Box -->
+                <a href="tel:09517054993" class="contact-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="title">Phone Number</span>
+                    <span class="val">0951-705-4993</span>
+                </a>
+
+                <!-- Instagram Box -->
+                <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="contact-box">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="title">Instagram</span>
+                    <span class="val">@graciamontepalco</span>
+                </a>
+
+                <!-- GitHub Box -->
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="contact-box">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="title">GitHub Repo</span>
+                    <span class="val">Gracia023105</span>
+                </a>
+
+            </div>
         </div>
 
     </div>
