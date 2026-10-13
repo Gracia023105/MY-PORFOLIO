@@ -3,105 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mary Grace Montepalco | Neon Cyber Portfolio</title>
+    <title>Mary Grace Montepalco | Neon Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #060913;
-            --card-bg: rgba(15, 23, 42, 0.75);
-            --cyan-neon: #00f0ff;
-            --magenta-neon: #ff007f;
-            --purple-neon: #a855f7;
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-        }
-
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: #060913;
+            color: #f8fafc;
+            padding: 2rem;
             min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
         }
-
-        /* Animated Matrix / Digital Background Canvas */
-        #cyber-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.25;
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
         }
-
-        /* Top Navigation Bar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 4rem;
-            background: rgba(6, 9, 19, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .brand-title {
-            font-size: 1.5rem;
-            font-weight: 800;
+        h1 {
+            font-size: 2.5rem;
+            color: #00f0ff;
+            text-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0,240,255,0.5);
+            margin-bottom: 0.5rem;
             letter-spacing: 2px;
-            background: linear-gradient(135deg, var(--cyan-neon), var(--magenta-neon));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        }
+        p.sub {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .grid-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .neon-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 2px solid #00f0ff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .neon-card:hover {
+            box-shadow: 0 0 35px #00f0ff, inset 0 0 25px rgba(0, 240, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        .neon-card.purple {
+            border-color: #a855f7;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25), inset 0 0 15px rgba(168, 85, 247, 0.1);
+        }
+        .neon-card.purple:hover {
+            box-shadow: 0 0 35px #a855f7, inset 0 0 25px rgba(168, 85, 247, 0.3);
+        }
+        h2 {
+            color: #00f0ff;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 8px #00f0ff;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .nav-links {
+        .purple h2 {
+            color: #a855f7;
+            text-shadow: 0 0 8px #a855f7;
+        }
+        p {
+            color: #cbd5e1;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        .skills-row {
+            grid-column: span 2;
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 0.5rem;
         }
-
-        .nav-links a {
-            color: var(--text-sub);
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
+        .badge {
+            background: #0f172a;
+            border: 1.5px solid #00f0ff;
+            color: #00f0ff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0,240,255,0.2);
         }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--cyan-neon);
-            text-shadow: 0 0 10px var(--cyan-neon);
-            border-bottom: 2px solid var(--cyan-neon);
+        @media(max-width: 768px) {
+            .grid-container { grid-template-columns: 1fr; }
+            .skills-row { grid-column: span 1; }
         }
+    </style>
+</head>
+<body>
 
-        /* Sub-Header Banner */
-        .hero-banner {
-            text-align: center;
-            padding: 2.5rem 1rem 1.5rem;
-        }
+    <header>
+        <h1>MARY GRACE MONTEPALCO</h1>
+        <p class="sub">Computer Engineering Student | Tech Enthusiast</p>
+    </header>
 
-        .hero-banner h2 {
-            font-size: 2.2rem;
-            color: var(--cyan-neon);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px var(--cyan-neon), 0 0 40px rgba(0,240,255,0.4);
-            animation: pulseGlow 2s infinite alternate;
-        }
+    <div class="grid-container">
+        
+        <div class="neon-card">
+            <h2><i class="fa-solid fa-microchip"></i> ABOUT ME</h2>
+            <p>I am an undergraduate <strong>Computer Engineering</strong> student passionate about software design, version control, networking, and system development. Currently building and integrating software architecture for <span>Project Nexus</span>.</p>
+        </div>
 
-        @keyframes pulseGlow {
-            0% { text-shadow: 0 0 15px var(--cyan-neon); }
-            100% { text-shadow: 0 0 30px var(--cyan-neon), 0 0 50px var(--cyan
+        <div class="neon-card purple">
+            <h2><i class="fa-solid fa-diagram-project"></i> FEATURED PROJECTS</h2>
+            <p><strong>Project Nexus</strong> — GitHub Architecture & Portfolio Development project focused on structured software engineering, repository management, and collaboration workflows.</p>
+        </div>
+
+        <div class="neon-card skills-row">
+            <div style="width: 100%; text-align: center; margin-bottom: 0.5rem;">
+                <h2 style="display: inline-block;"><i class="fa-solid fa-code"></i> TECHNICAL SKILLS</h2>
+            </div>
+            <div class="badge">☕ Java</div>
+            <div class="badge" style="border-color: #a855f7; color: #a855f7;">🐙 Git & GitHub</div>
+            <div class="badge">🌐 Packet Tracer</div>
+            <div class="badge" style="border-color: #ff007f; color: #ff007f; box-shadow: 0 0 10px rgba(255,0,127,0.2);">📐 Software Design</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
