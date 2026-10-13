@@ -26,28 +26,27 @@
             position: relative;
         }
 
-        /* 🌸 EXTRA MALAPAD AT MALAKING ANIME CHARACTER SA BUONG LEFT SIDE 🌸 */
+        /* 🌸 FIT SA LEFT SIDE (PERFECT COVERAGE AT WALANG BAGO SA BACKGROUND FILE) 🌸 */
         .anime-bg-container {
             position: fixed;
-            left: -30px;
+            left: 0;
             bottom: 0;
             top: 0;
-            width: 55vw;
-            max-width: 800px;
+            width: 45vw;
+            max-width: 600px;
             pointer-events: none;
             z-index: 1;
             opacity: 0.75;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: flex-start;
         }
 
         .anime-bg-img {
             height: 100vh;
             width: 100%;
-            object-fit: contain;
+            object-fit: cover;
             object-position: left center;
-            transform: scale(1.35);
             filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
             animation: pinkPulse 3s infinite alternate;
         }
@@ -389,7 +388,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.35; width: 380px; }
+            .anime-bg-container { opacity: 0.35; width: 320px; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -398,7 +397,7 @@
 </head>
 <body>
 
-    <!-- 🌸 EXTRA MALAPAD AT MALAKING ANIME BACKGROUND 🌸 -->
+    <!-- 🌸 ANIME BACKGROUND (PERFECTLY FIT SA LEFT SIDE) 🌸 -->
     <div class="anime-bg-container">
         <img src="anime-removebg-preview.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
@@ -416,7 +415,7 @@
 
     <div class="container">
 
-        <!-- UNANG SCROLL: NAME, COURSE, AND NEW ABOUT ME -->
+        <!-- UNANG SCROLL: NAME, COURSE, AND TRANSLATED ABOUT ME -->
         <div class="pink-card" id="about">
             <div class="hero-flex">
                 <div class="hero-left">
@@ -427,7 +426,6 @@
                     <h1 class="hero-name">Hi, I'm <span>Mary Grace B. Montepalco</span></h1>
                     <div class="hero-course">Bachelor of Science in Computer Engineering</div>
                     
-                    <!-- 🌸 BAGONG NA-TRANSLATE NA ABOUT ME PARAGRAPH 🌸 -->
                     <p class="hero-about">
                         I am a graduating Bachelor of Science in Computer Engineering student at ICCT Colleges Cainta. I have a strong passion for web development and am eager to deepen my understanding of clean coding practices and core software logic. I am continuously exploring various development tools and applications to expand my technical skill set. Currently, I am actively building my knowledge through academic projects and hands-on practical applications.
                     </p>
