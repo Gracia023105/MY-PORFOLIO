@@ -26,10 +26,10 @@
             position: relative;
         }
 
-        /* 🌸 TRANSPARENT ANIME CHARACTER CUTOUT NA WALANG BLACK BACKGROUND 🌸 */
+        /* 🌸 PURE TRANSPARENT CUTOUT: NAWALA ANG PUTI AT ITIM NA BACKGROUND NG PICTURE 🌸 */
         .anime-bg-container {
             position: fixed;
-            left: -10px;
+            left: -20px;
             bottom: 0;
             top: 0;
             width: 45vw;
@@ -46,18 +46,18 @@
             width: 100%;
             object-fit: cover;
             object-position: left bottom;
-            /* Binubura ang itim na background gamit ang contrast/brightness manipulation at pinapalitan ng neon pink glow */
-            filter: contrast(200%) brightness(120%) drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.9)) sepia(100%) hue-rotate(290deg) saturate(600%);
-            mix-blend-mode: screen;
+            /* Ang lighten at screen mode ang kusang nagtatanggal ng white/bright square backgrounds, leaving only the dark lines glowing pink */
+            mix-blend-mode: lighten;
+            filter: drop-shadow(0 0 20px #ff007f) drop-shadow(0 0 40px rgba(255, 0, 127, 0.8)) sepia(100%) hue-rotate(290deg) saturate(500%);
             animation: pinkPulse 3s infinite alternate;
         }
 
         @keyframes pinkPulse {
             0% {
-                filter: contrast(200%) brightness(110%) drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.7)) sepia(100%) hue-rotate(290deg) saturate(500%);
+                filter: drop-shadow(0 0 15px #ff007f) drop-shadow(0 0 30px rgba(255, 0, 127, 0.6)) sepia(100%) hue-rotate(290deg) saturate(400%);
             }
             100% {
-                filter: contrast(220%) brightness(130%) drop-shadow(0 0 35px #ff007f) drop-shadow(0 0 75px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(700%);
+                filter: drop-shadow(0 0 30px #ff007f) drop-shadow(0 0 60px rgba(255, 0, 127, 0.95)) sepia(100%) hue-rotate(290deg) saturate(600%);
             }
         }
 
@@ -398,7 +398,7 @@
 </head>
 <body>
 
-    <!-- 🌸 ANIME CHARACTER CUTOUT WITH NEON PINK GLOW (NO BLACK BACKGROUND) 🌸 -->
+    <!-- 🌸 ANIME BACKGROUND WITH LIGHTEN BLEND (NO WHITE/BLACK BOX BACKGROUND) 🌸 -->
     <div class="anime-bg-container">
         <img src="anime.png" alt="Anime Character Background" class="anime-bg-img">
     </div>
