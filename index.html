@@ -26,28 +26,28 @@
             position: relative;
         }
 
-        /* 🌸 MALAKING TRANSPARENT ANIME CHARACTER FIT SA BUONG LEFT SIDE 🌸 */
+        /* 🌸 EXTRA MALAPAD AT MALAKING ANIME CHARACTER SA BUONG LEFT SIDE 🌸 */
         .anime-bg-container {
             position: fixed;
-            left: 0;
+            left: -30px;
             bottom: 0;
             top: 0;
-            width: 50vw;
-            max-width: 680px;
+            width: 55vw; /* Pinalapad ang sakop sa buong kaliwang kalahati ng screen */
+            max-width: 800px;
             pointer-events: none;
             z-index: 1;
             opacity: 0.75;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: flex-start;
         }
 
         .anime-bg-img {
             height: 100vh;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: left center;
-            transform: scale(1.08); /* Pinatangkad at pinalaki nang kaunti para sagad sa gilid */
+            transform: scale(1.35); /* Pinalaki at pinalapad nang husto */
             filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
             animation: pinkPulse 3s infinite alternate;
         }
@@ -389,7 +389,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.35; width: 320px; }
+            .anime-bg-container { opacity: 0.35; width: 380px; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -398,7 +398,7 @@
 </head>
 <body>
 
-    <!-- 🌸 MALAKING TRANSPARENT ANIME BACKGROUND 🌸 -->
+    <!-- 🌸 EXTRA MALAPAD AT MALAKING ANIME BACKGROUND 🌸 -->
     <div class="anime-bg-container">
         <img src="anime-removebg-preview.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
@@ -465,86 +465,4 @@
         <!-- 02 / TECHNICAL COMPETENCIES (SKILLS & TOOLS WITH PINK HOVER GLOW) -->
         <div class="pink-card" id="skills">
             <div class="tag-sub">02 / TECHNICAL COMPETENCIES</div>
-            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Skills & <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Tools</span></h2>
-            <p style="color: var(--text-sub); margin-top: 0.5rem;">
-                Core competencies and software tools used in Computer Engineering coursework:
-            </p>
-            <div class="skills-badges">
-                <div class="badge">☕ Java Programming</div>
-                <div class="badge">🐙 Git & GitHub Workflows</div>
-                <div class="badge">🌐 Cisco Packet Tracer</div>
-                <div class="badge">📐 Software Architecture</div>
-                <div class="badge">🎨 Canva Design</div>
-                <div class="badge">🍞 Bread & Pastry NC II</div>
-            </div>
-        </div>
-
-        <!-- CONTACT SECTION WITH INSTAGRAM INCLUDED -->
-        <div class="pink-card" id="contact">
-            <div class="tag-sub">03 / GET IN TOUCH</div>
-            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Have something to <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">talk about?</span></h2>
-            <p style="color: var(--text-sub); margin-top: 0.5rem;">
-                I'm open to connecting with people who share an interest in technology, software engineering, and learning.
-            </p>
-
-            <div class="contact-grid">
-                <a href="mailto:marygracemontepalco25@gmail.com" class="contact-box">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span class="title">Email Address</span>
-                    <span class="val">marygracemontepalco25@gmail.com</span>
-                </a>
-
-                <a href="tel:09517054993" class="contact-box">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="title">Phone Number</span>
-                    <span class="val">0951-705-4993</span>
-                </a>
-
-                <!-- INSTAGRAM -->
-                <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="contact-box">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span class="title">Instagram</span>
-                    <span class="val">@graciamontepalco</span>
-                </a>
-
-                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="contact-box">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="title">GitHub Profile</span>
-                    <span class="val">Gracia023105</span>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Script for Dynamic Water Ripple Drop on Arrow Hover -->
-    <script>
-        document.querySelectorAll('.pink-card').forEach(card => {
-            let lastRippleTime = 0;
-
-            card.addEventListener('mousemove', function (e) {
-                const now = Date.now();
-                if (now - lastRippleTime > 180) {
-                    lastRippleTime = now;
-
-                    const ripple = document.createElement('span');
-                    ripple.classList.add('hover-ripple');
-
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-
-                    ripple.style.left = x + 'px';
-                    ripple.style.top = y + 'px';
-
-                    this.appendChild(ripple);
-
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 800);
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top
