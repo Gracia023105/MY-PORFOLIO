@@ -6,224 +6,402 @@
     <title>Mary Grace Montepalco | Cyber Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --neon-pink: #ff007f;
+            --pink-glow: rgba(255, 0, 127, 0.6);
+            --pink-bg: rgba(255, 0, 127, 0.05);
+            --card-bg: #0d111a;
+            --bg-color: #06080e;
+            --text-white: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
         body {
-            background-color: #060913;
-            color: #f8fafc;
+            background-color: var(--bg-color);
+            color: var(--text-white);
             padding: 2rem 1rem;
             min-height: 100vh;
+            overflow-x: hidden;
         }
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
+
+        /* Top Navigation Header */
+        nav {
+            max-width: 1100px;
+            margin: 0 auto 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(13, 17, 26, 0.8);
+            border: 1px solid rgba(255, 0, 127, 0.3);
+            border-radius: 40px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+            backdrop-filter: blur(10px);
         }
-        h1 {
-            font-size: 2.5rem;
-            color: #00f0ff;
-            text-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0,240,255,0.5);
-            margin-bottom: 0.5rem;
+
+        .brand-logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
             letter-spacing: 2px;
         }
-        p.sub {
-            color: #ff007f;
-            font-size: 1.1rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
-            font-weight: bold;
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
         }
-        .grid-container {
+
+        .nav-links a {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 8px var(--neon-pink);
+        }
+
+        .container {
             max-width: 1100px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .neon-card {
-            background: rgba(15, 23, 42, 0.85);
-            border: 2px solid #00f0ff;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        .neon-card:hover {
-            box-shadow: 0 0 35px #00f0ff, inset 0 0 25px rgba(0, 240, 255, 0.3);
-            transform: translateY(-3px);
-        }
-        .neon-card.purple {
-            border-color: #a855f7;
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25), inset 0 0 15px rgba(168, 85, 247, 0.1);
-        }
-        .neon-card.purple:hover {
-            box-shadow: 0 0 35px #a855f7, inset 0 0 25px rgba(168, 85, 247, 0.3);
-        }
-        .neon-card.pink-section {
-            border-color: #ff007f;
-            box-shadow: 0 0 20px rgba(255, 0, 127, 0.25), inset 0 0 15px rgba(255, 0, 127, 0.1);
-            grid-column: span 2;
-        }
-        .neon-card.pink-section:hover {
-            box-shadow: 0 0 35px #ff007f, inset 0 0 25px rgba(255, 0, 127, 0.3);
-        }
-        h2 {
-            color: #00f0ff;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 8px #00f0ff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .purple h2 { color: #a855f7; text-shadow: 0 0 8px #a855f7; }
-        .pink-section h2 { color: #ff007f; text-shadow: 0 0 10px #ff007f; }
-
-        p { color: #cbd5e1; line-height: 1.7; font-size: 1.05rem; }
-
-        .skills-row {
-            grid-column: span 2;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 0.5rem;
-        }
-        .badge {
-            background: #0f172a;
-            border: 1.5px solid #00f0ff;
-            color: #00f0ff;
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(0,240,255,0.2);
-        }
-
-        /* Separate Neon Pink Contact Cards Layout */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1rem;
-        }
-        .contact-box {
-            background: #0d111a;
-            border: 2px solid #ff007f;
-            border-radius: 12px;
-            padding: 1.2rem 1rem;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Water Ripple & Neon Pink Card Style */
+        .pink-card {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-pink);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.2), inset 0 0 15px rgba(255, 0, 127, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Liquid Wave Effect on Hover */
+        .pink-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 0, 127, 0.35) 0%, rgba(255, 0, 127, 0) 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease-out, height 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        .pink-card:hover::before {
+            width: 600px;
+            height: 600px;
+        }
+
+        .pink-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 35px var(--neon-pink), inset 0 0 25px rgba(255, 0, 127, 0.2);
+        }
+
+        /* Water Ripple Animation Effect on Click */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 0, 127, 0.5);
+            transform: scale(0);
+            animation: ripple-effect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-effect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Hero / Profile Section Layout (Follow the Progress Section) */
+        .profile-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .avatar-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px dashed var(--neon-pink);
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            font-size: 3.5rem;
+            color: var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+            animation: rotateBorder 12s linear infinite;
+            flex-shrink: 0;
         }
-        .contact-box i {
-            font-size: 2rem;
-            color: #ff007f;
-            text-shadow: 0 0 12px #ff007f;
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        .contact-box span.title {
+
+        .tag-sub {
+            color: var(--neon-pink);
             font-size: 0.8rem;
-            color: #ff80bf;
+            font-weight: 800;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px var(--neon-pink);
         }
-        .contact-box span.val {
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .main-title span {
+            color: var(--neon-pink);
+            text-shadow: 0 0 15px var(--neon-pink);
+        }
+
+        .desc-text {
+            color: var(--text-sub);
             font-size: 0.95rem;
-            font-weight: bold;
-            word-break: break-all;
+            margin-bottom: 1.5rem;
         }
-        .contact-box:hover {
-            background: #ff007f;
-            color: #000000;
-            box-shadow: 0 0 30px #ff007f;
-            transform: translateY(-4px);
+
+        /* Neon Pink Buttons */
+        .btn-pink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--neon-pink);
+            color: #000;
+            padding: 0.75rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 0 20px var(--neon-pink);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-        .contact-box:hover i, .contact-box:hover span.title {
-            color: #000000;
-            text-shadow: none;
+
+        .btn-pink:hover {
+            box-shadow: 0 0 35px var(--neon-pink), 0 0 50px var(--neon-pink);
+            transform: scale(1.03);
+        }
+
+        .btn-outline-pink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 2px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 0.75rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-pink:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-pink);
+        }
+
+        /* Right Side Small Box (GitHub Profile Box) */
+        .side-profile-box {
+            background: rgba(6, 8, 14, 0.8);
+            border: 1px solid var(--neon-pink);
+            border-radius: 14px;
+            padding: 1.5rem;
+            min-width: 240px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.15);
+        }
+
+        .side-profile-box h4 {
+            color: #f8fafc;
+            font-size: 1.2rem;
+            margin: 0.3rem 0;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-pink);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--neon-pink);
+            margin-right: 6px;
+        }
+
+        /* Contact Section (Have something to talk about) */
+        .contact-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .info-list {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .info-item {
+            font-family: monospace;
+            color: var(--neon-pink);
+            font-size: 1rem;
+            text-shadow: 0 0 6px var(--neon-pink);
         }
 
         @media(max-width: 768px) {
-            .grid-container { grid-template-columns: 1fr; }
-            .skills-row, .neon-card.pink-section { grid-column: span 1; }
+            .profile-flex { flex-direction: column; }
+            .profile-left { flex-direction: column; text-align: center; }
+            .side-profile-box { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>MARY GRACE MONTEPALCO</h1>
-        <p class="sub">✨ Computer Engineering Student | Cyber Tech Enthusiast ✨</p>
-    </header>
+    <!-- Top Navigation -->
+    <nav>
+        <div class="brand-logo">MGM</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="grid-container">
-        
-        <!-- ABOUT ME CARD -->
-        <div class="neon-card">
-            <h2><i class="fa-solid fa-microchip"></i> ABOUT ME</h2>
-            <p>I am an undergraduate <strong>Computer Engineering</strong> student passionate about software design, version control, networking, and system development. Currently building and integrating software architecture for <span>Project Nexus</span>.</p>
-        </div>
+    <div class="container">
 
-        <!-- FEATURED PROJECTS CARD -->
-        <div class="cyber-card neon-card purple">
-            <h2><i class="fa-solid fa-diagram-project"></i> FEATURED PROJECTS</h2>
-            <p><strong>Project Nexus</strong> — GitHub Architecture & Portfolio Development project focused on structured software engineering, repository management, and collaboration workflows.</p>
-        </div>
+        <!-- BOX 1: MAIN PROFILE / FOLLOW THE PROGRESS -->
+        <div class="pink-card" id="about">
+            <div class="profile-flex">
+                <div class="profile-left">
+                    <div class="avatar-circle">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div>
+                        <div class="tag-sub">COMPUTER ENGINEERING / PROFILE</div>
+                        <h1 class="main-title">Follow the <span>progress.</span></h1>
+                        <p class="desc-text">Explore my GitHub profile for computer engineering projects, Java coursework, network architecture, and future updates.</p>
+                        <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-pink">
+                            View My GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <!-- TECHNICAL SKILLS ROW -->
-        <div class="neon-card skills-row">
-            <div style="width: 100%; text-align: center; margin-bottom: 0.5rem;">
-                <h2 style="display: inline-block;"><i class="fa-solid fa-code"></i> TECHNICAL SKILLS</h2>
+                <!-- Small GitHub Profile Side Box -->
+                <div class="side-profile-box">
+                    <div class="tag-sub">GITHUB PROFILE</div>
+                    <h4>@Gracia023105</h4>
+                    <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.5rem;">
+                        <span class="status-dot"></span> Public Profile
+                    </p>
+                </div>
             </div>
-            <div class="badge">☕ Java</div>
-            <div class="badge" style="border-color: #a855f7; color: #a855f7;">🐙 Git & GitHub</div>
-            <div class="badge">🌐 Packet Tracer</div>
-            <div class="badge" style="border-color: #ff007f; color: #ff007f; box-shadow: 0 0 10px rgba(255,0,127,0.2);">📐 Software Design</div>
         </div>
 
-        <!-- NEON PINK CONTACT & SOCIAL LINKS (SEPARATE BOXES) -->
-        <div class="neon-card pink-section">
-            <h2><i class="fa-solid fa-heart"></i> CONTACT & SOCIAL LINKS</h2>
-            <div class="contact-grid">
-                
-                <!-- Email Box -->
-                <a href="mailto:marygracemontepalco25@gmail.com" class="contact-box">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span class="title">Email Address</span>
-                    <span class="val">marygracemontepalco25@gmail.com</span>
-                </a>
+        <!-- BOX 2: SKILLS & PROJECTS -->
+        <div class="pink-card" id="projects">
+            <div class="tag-sub">02 / FEATURED ARCHITECTURE</div>
+            <h2 class="main-title" style="font-size: 1.8rem; margin-top: 0.3rem;">Project <span>Nexus</span> & Technical Stack</h2>
+            <p class="desc-text">Structured software architecture, repository management, Cisco Packet Tracer simulations, Java programming, and automated web deployment.</p>
+            <div class="action-buttons">
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-outline-pink">Project Nexus Repo <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
 
-                <!-- Mobile Box -->
-                <a href="tel:09517054993" class="contact-box">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="title">Phone Number</span>
-                    <span class="val">0951-705-4993</span>
-                </a>
+        <!-- BOX 3: CONTACT SECTION (HAVE SOMETHING TO TALK ABOUT) -->
+        <div class="pink-card" id="contact">
+            <div class="contact-flex">
+                <div>
+                    <div class="tag-sub">03 / GET IN TOUCH</div>
+                    <h2 class="main-title">Have something to <span>talk about?</span></h2>
+                    <p class="desc-text">I'm open to connecting with people who share an interest in technology, software engineering, and learning.</p>
+                </div>
 
-                <!-- Instagram Box -->
-                <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="contact-box">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span class="title">Instagram</span>
-                    <span class="val">@graciamontepalco</span>
-                </a>
+                <!-- Action Buttons: Email & GitHub -->
+                <div class="action-buttons">
+                    <a href="mailto:marygracemontepalco25@gmail.com" class="btn-pink">Email Me <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-outline-pink">GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="btn-outline-pink">Instagram <i class="fa-brands fa-instagram"></i></a>
+                </div>
 
-                <!-- GitHub Box -->
-                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="contact-box">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="title">GitHub Repo</span>
-                    <span class="val">Gracia023105</span>
-                </a>
-
+                <!-- Contact Info Details List -->
+                <div class="info-list">
+                    <div class="info-item"><i class="fa-solid fa-envelope"></i> marygracemontepalco25@gmail.com</div>
+                    <div class="info-item"><i class="fa-solid fa-phone"></i> 0951-705-4993</div>
+                </div>
             </div>
         </div>
 
     </div>
 
+    <!-- Script para sa Click Water Ripple Effect -->
+    <script>
+        document.querySelectorAll('.pink-card').forEach(card => {
+            card.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                
+                const rect = card.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+                ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
 </body>
 </html>
