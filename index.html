@@ -385,3 +385,95 @@
                 <div class="side-box">
                     <div class="avatar-circle">
                         <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="tag-sub" style="justify-content: center;">GITHUB PROFILE</div>
+                    <h3 style="color: #f8fafc; font-size: 1.2rem;">@Gracia023105</h3>
+                    <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.4rem;">Public Portfolio Repo</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BOX 2: SKILLS SECTION -->
+        <div class="pink-card" id="skills">
+            <div class="tag-sub">02 / TECHNICAL COMPETENCIES</div>
+            <h2 style="font-size: 1.8rem; margin-top: 0.3rem;">Core <span>Skills</span> & Tools</h2>
+            <p style="color: var(--text-sub); margin-top: 0.5rem;">
+                Tools and technologies utilized throughout Computer Engineering coursework and hands-on projects:
+            </p>
+            <div class="skills-badges">
+                <div class="badge">☕ Java Programming</div>
+                <div class="badge">🐙 Git & GitHub Workflows</div>
+                <div class="badge">🌐 Cisco Packet Tracer</div>
+                <div class="badge">📐 Software Architecture</div>
+                <div class="badge">🎨 Canva Design</div>
+                <div class="badge">🍞 Bread & Pastry NC II</div>
+            </div>
+        </div>
+
+        <!-- BOX 3: FEATURED PROJECTS (PROJECT NEXUS) -->
+        <div class="pink-card" id="projects">
+            <div class="tag-sub">03 / FEATURED ARCHITECTURE</div>
+            <h2 style="font-size: 1.8rem; margin-top: 0.3rem;">Project <span>Nexus</span></h2>
+            <p style="color: var(--text-sub); margin-top: 0.5rem;">
+                GitHub Architecture & Portfolio Development project focused on structured software engineering, repository management, and dynamic web deployment via GitHub Pages.
+            </p>
+            <div class="action-buttons">
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-outline-pink">
+                    View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- BOX 4: CONTACT & SOCIAL LINKS -->
+        <div class="pink-card" id="contact">
+            <div class="tag-sub">04 / GET IN TOUCH</div>
+            <h2 style="font-size: 2rem; margin-top: 0.3rem;">Have something to <span>talk about?</span></h2>
+            <p style="color: var(--text-sub); margin-top: 0.5rem;">
+                I'm open to connecting with people who share an interest in technology, software engineering, and collaborative projects.
+            </p>
+
+            <div class="action-buttons">
+                <a href="mailto:marygracemontepalco25@gmail.com" class="btn-pink">
+                    Email Me <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="btn-outline-pink">
+                    Instagram <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-outline-pink">
+                    GitHub Profile <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+
+            <div class="info-list">
+                <div class="info-item"><i class="fa-solid fa-envelope"></i> marygracemontepalco25@gmail.com</div>
+                <div class="info-item"><i class="fa-solid fa-phone"></i> 0951-705-4993</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script para sa Water Ripple Click Effect -->
+    <script>
+        document.querySelectorAll('.pink-card').forEach(card => {
+            card.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                
+                const rect = card.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+                ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>
