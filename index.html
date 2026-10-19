@@ -78,12 +78,17 @@
             z-index: 100;
         }
 
-        /* Left Side: Avatar + Name + Title sa Navbar */
+        /* Left Side: Avatar + Name + Title sa Navbar (Naka-link sa IG) */
         .nav-brand {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-brand:hover {
+            opacity: 0.85;
         }
 
         .nav-avatar {
@@ -104,6 +109,14 @@
             font-weight: 700;
             font-size: 0.9rem;
             color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-name i {
+            font-size: 0.75rem;
+            color: var(--neon-pink);
         }
 
         .nav-title-sub {
@@ -466,7 +479,7 @@
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
-            .nav-menu { display: none; } /* Pwedeng i-adjust kung gusto mo ng hamburger menu sa mobile */
+            .nav-menu { display: none; }
         }
     </style>
 </head>
@@ -477,12 +490,12 @@
         <img src="anime-removebg-preview.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
 
-    <!-- 🌟 TOP NAVIGATION BAR (KAHAMIG NG REFERENCE MO) 🌟 -->
+    <!-- 🌟 TOP NAVIGATION BAR (NAKA-LINK NA SA IG ANG PANGALAN MO SA KALIWA) 🌟 -->
     <nav>
-        <a href="#about" class="nav-brand">
+        <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="nav-brand" title="Visit my Instagram">
             <img src="assets/profile.jpg" alt="Mary Grace" class="nav-avatar" onerror="this.style.display='none'">
             <div class="nav-brand-text">
-                <span class="nav-name">Mary Grace Montepalco</span>
+                <span class="nav-name">Mary Grace Montepalco <i class="fa-brands fa-instagram"></i></span>
                 <span class="nav-title-sub">CpE Student</span>
             </div>
         </a>
@@ -499,8 +512,8 @@
                 <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="nav-social-icon" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <!-- Resume Button sa Kanan -->
-                <a href="#contact" class="btn-nav-resume">
+                <!-- Tunay na Resume Download Link -->
+                <a href="resume.pdf" download="Mary_Grace_Montepalco_Resume.pdf" class="btn-nav-resume">
                     Resume <i class="fa-solid fa-download" style="font-size: 0.75rem;"></i>
                 </a>
             </div>
