@@ -28,24 +28,27 @@
             position: relative;
         }
 
+        /* 🌸 BACKGROUND IMAGE OVERLAY 🌸 */
         .anime-bg-container {
             position: fixed;
             left: 0;
-            bottom: 0;
             top: 0;
-            width: 45vw;
-            max-width: 600px;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
             pointer-events: none;
             z-index: 1;
-            opacity: 0.75;
+            opacity: 0.35;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: flex-start;
         }
 
         .anime-bg-img {
             height: 100vh;
-            width: 100%;
+            width: auto;
+            max-width: 50vw;
             object-fit: cover;
             object-position: left center;
             filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
@@ -224,7 +227,7 @@
             align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
-            min-height: 65vh;
+            min-height: 50vh;
         }
 
         .hero-left { flex: 1.2; min-width: 300px; }
@@ -331,6 +334,65 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* ------------------------------------------------------------- */
+        /* 🌀 MOVING SKILLS MARQUEE 🌀 */
+        /* ------------------------------------------------------------- */
+        .marquee-wrapper {
+            margin-top: 1.5rem;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 0.5rem 0;
+            border-top: 1px dashed rgba(255, 0, 127, 0.3);
+            padding-top: 1.2rem;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            animation: marqueeScroll 25s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-badge {
+            background: rgba(6, 8, 14, 0.9);
+            border: 1.5px solid var(--neon-pink);
+            color: #ffffff;
+            padding: 0.55rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .marquee-badge i {
+            color: var(--neon-pink);
+        }
+
+        .marquee-badge:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .marquee-badge:hover i {
+            color: #000;
+        }
+
         /* Timeline / Work History */
         .timeline {
             position: relative;
@@ -393,7 +455,7 @@
         /* FEATURED PROJECTS CARDS */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
             margin-top: 1.8rem;
             margin-bottom: 2rem;
@@ -417,7 +479,7 @@
 
         .project-img-box {
             width: 100%;
-            height: 170px;
+            height: 200px;
             background: #0d121d;
             border-bottom: 1px solid rgba(255, 0, 127, 0.2);
             display: flex;
@@ -428,7 +490,7 @@
         }
 
         .project-img-box i {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--neon-pink);
             text-shadow: 0 0 15px var(--neon-pink);
         }
@@ -492,28 +554,6 @@
             font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 0.5px;
-        }
-
-        .skills-badges { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.4rem; }
-
-        .badge {
-            background: #06080e;
-            border: 1.5px solid var(--neon-pink);
-            color: var(--neon-pink);
-            padding: 0.7rem 1.4rem;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            box-shadow: 0 0 10px rgba(255,0,127,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .badge:hover {
-            background: var(--neon-pink);
-            color: #000;
-            box-shadow: 0 0 25px var(--neon-pink), 0 0 40px var(--neon-pink);
-            transform: scale(1.08) translateY(-3px);
         }
 
         /* FOOTER CARD */
@@ -783,7 +823,7 @@
         }
 
         @media(max-width: 900px) {
-            .anime-bg-container { opacity: 0.35; width: 320px; }
+            .anime-bg-container { opacity: 0.2; }
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
@@ -816,7 +856,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
@@ -834,7 +873,7 @@
     <!-- CONTAINER NG MGA CARDS -->
     <div class="container">
 
-        <!-- ABOUT ME SECTION -->
+        <!-- ABOUT ME SECTION WITH INFINITE MARQUEE BADGES AT THE BOTTOM -->
         <div class="pink-card" id="about">
             <div class="hero-flex">
                 <div class="hero-left">
@@ -864,6 +903,26 @@
                     <div class="tag-sub" style="justify-content: center;">STUDENT PORTFOLIO</div>
                     <h3 style="color: #f8fafc; font-size: 1.2rem;">ICCT Colleges Cainta</h3>
                     <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 0.4rem;">BS Computer Engineering</p>
+                </div>
+            </div>
+
+            <!-- 🌀 MOVING SKILLS MARQUEE (INCLUDED: Git & GitHub Workflows) 🌀 -->
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <!-- First Set -->
+                    <span class="marquee-badge"><i class="fa-solid fa-chart-line"></i> Bookkeeping & Data Entry</span>
+                    <span class="marquee-badge"><i class="fa-brands fa-github"></i> Git & GitHub Workflows</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-code"></i> HTML5 & CSS3 Web Design</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-palette"></i> Canva Design & Graphics</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-bread-slice"></i> Bread & Pastry NC II</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-laptop-code"></i> Software Development</span>
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <span class="marquee-badge"><i class="fa-solid fa-chart-line"></i> Bookkeeping & Data Entry</span>
+                    <span class="marquee-badge"><i class="fa-brands fa-github"></i> Git & GitHub Workflows</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-code"></i> HTML5 & CSS3 Web Design</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-palette"></i> Canva Design & Graphics</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-bread-slice"></i> Bread & Pastry NC II</span>
+                    <span class="marquee-badge"><i class="fa-solid fa-laptop-code"></i> Software Development</span>
                 </div>
             </div>
         </div>
@@ -905,67 +964,25 @@
             <h2 style="font-size: 2.2rem; font-weight: 900;">My <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Projects Featured.</span></h2>
 
             <div class="projects-grid">
-                <!-- Project Card 1: Personal Portfolio -->
+                <!-- Project Card: Personal Portfolio -->
                 <div class="project-card">
                     <div class="project-img-box">
-                        <i class="fa-solid fa-address-card"></i>
+                        <i class="fa-solid fa-laptop-code"></i>
                     </div>
                     <div class="project-body">
                         <div class="project-header-top">
-                            <div class="project-title">Personal Portfolio</div>
+                            <div class="project-title">Personal Portfolio Web App</div>
                             <div class="project-links">
                                 <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
                                 <a href="https://gracia023105.github.io/MY-PORFOLIO/" target="_blank" title="Live Site"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
-                        <p class="project-desc">A modern, responsive, and neon-styled web portfolio showcasing my academic progress, technical skills, and work history.</p>
+                        <p class="project-desc">A modern, responsive, and neon-styled web portfolio showcasing my academic progress, technical competencies, and work history.</p>
                         <div class="project-tags">
                             <span class="project-tag">HTML5</span>
                             <span class="project-tag">CSS3</span>
                             <span class="project-tag">JAVASCRIPT</span>
                             <span class="project-tag">GITHUB PAGES</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2: Java Coursework Projects -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <i class="fa-brands fa-java"></i>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-header-top">
-                            <div class="project-title">Java Academic Systems</div>
-                            <div class="project-links">
-                                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                            </div>
-                        </div>
-                        <p class="project-desc">Object-Oriented Programming (OOP) projects created for Computer Engineering coursework, focusing on class structures and data handling.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">JAVA</span>
-                            <span class="project-tag">OOP</span>
-                            <span class="project-tag">DATA STRUCTURES</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3: Network Simulation -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <i class="fa-solid fa-network-wired"></i>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-header-top">
-                            <div class="project-title">Packet Tracer Network Lab</div>
-                            <div class="project-links">
-                                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                            </div>
-                        </div>
-                        <p class="project-desc">Cisco Packet Tracer simulation labs designed for network topology routing, IP addressing, and router configurations.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">PACKET TRACER</span>
-                            <span class="project-tag">NETWORKING</span>
-                            <span class="project-tag">CISCO</span>
                         </div>
                     </div>
                 </div>
@@ -975,23 +992,6 @@
                 <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-pink">
                     See all Projects <i class="fa-solid fa-arrow-right"></i>
                 </a>
-            </div>
-        </div>
-
-        <!-- SKILLS SECTION -->
-        <div class="pink-card" id="skills">
-            <div class="tag-sub">02 / TECHNICAL COMPETENCIES</div>
-            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Skills & <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Tools</span></h2>
-            <p style="color: var(--text-sub); margin-top: 0.5rem;">
-                Core competencies and software tools used in Computer Engineering & Professional Experience:
-            </p>
-            <div class="skills-badges">
-                <div class="badge">📊 Bookkeeping & Data Entry</div>
-                <div class="badge">☕ Java Programming</div>
-                <div class="badge">🐙 Git & GitHub Workflows</div>
-                <div class="badge">🌐 Cisco Packet Tracer</div>
-                <div class="badge">🎨 Canva Design</div>
-                <div class="badge">🍞 Bread & Pastry NC II</div>
             </div>
         </div>
 
@@ -1016,7 +1016,6 @@
                         <li><a href="#about">Home</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#projects">Projects</a></li>
-                        <li><a href="#skills">Skills</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
