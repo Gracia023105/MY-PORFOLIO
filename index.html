@@ -20,7 +20,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-white);
-            padding: 2rem 1rem;
+            padding: 2rem 1rem 0;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
@@ -55,6 +55,7 @@
             100% { filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%); }
         }
 
+        /* NAVIGATION BAR */
         nav {
             max-width: 1100px;
             margin: 0 auto 2.5rem;
@@ -409,35 +410,298 @@
             transform: scale(1.08) translateY(-3px);
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.5rem;
+        /* ------------------------------------------------------------- */
+        /* 🌟 NEW FOOTER & CONNECT SECTION (BASED ON SAMPLE PHOTO) 🌟 */
+        /* ------------------------------------------------------------- */
+        .footer-section {
+            margin-top: 4rem;
+            background: rgba(13, 17, 26, 0.95);
+            border-top: 1px solid rgba(255, 0, 127, 0.3);
+            padding: 4rem 1.5rem 2rem;
+            position: relative;
+            z-index: 10;
         }
 
-        .contact-box {
-            background: #06080e;
-            border: 1.5px solid var(--neon-pink);
-            border-radius: 12px;
-            padding: 1.2rem;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
+        .connect-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .btn-connect-here {
+            background: #ffffff;
+            color: #0d1117;
+            padding: 0.75rem 2.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
             transition: all 0.3s ease;
+        }
+
+        .btn-connect-here:hover {
+            background-color: var(--neon-pink);
+            color: #ffffff;
+            box-shadow: 0 0 30px var(--neon-pink);
+            transform: translateY(-2px);
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col-brand h3 {
+            font-size: 1.4rem;
+            color: var(--neon-pink);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .footer-col-brand p {
+            color: var(--text-sub);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .footer-col-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .footer-links-list {
+            list-style: none;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 6px;
+            gap: 0.6rem;
         }
 
-        .contact-box i { font-size: 2rem; color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); transition: all 0.3s ease; }
-        .contact-box span.title { font-size: 0.75rem; color: #ff80bf; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-        .contact-box span.val { font-size: 0.9rem; font-weight: bold; word-break: break-all; }
+        .footer-links-list a {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
 
-        .contact-box:hover { background: var(--neon-pink); color: #000; box-shadow: 0 0 25px var(--neon-pink); transform: translateY(-3px); }
-        .contact-box:hover i, .contact-box:hover span.title { color: #000; text-shadow: none; }
+        .footer-links-list a:hover {
+            color: var(--neon-pink);
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .footer-social-icon-box {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-icon-box:hover {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* 💬 ASK A QUESTION MODAL POPUP (BASED ON SECOND PHOTO) 💬 */
+        /* ------------------------------------------------------------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .question-modal {
+            background: #0d121d;
+            border: 1.5px solid var(--neon-pink);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 480px;
+            padding: 2rem;
+            box-shadow: 0 0 40px rgba(255, 0, 127, 0.3);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .question-modal {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-title i {
+            color: var(--neon-pink);
+        }
+
+        .btn-close-modal {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .btn-close-modal:hover {
+            color: var(--neon-pink);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-control {
+            width: 100%;
+            background: #06080e;
+            border: 1px solid rgba(255, 0, 127, 0.3);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: #ffffff;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 12px var(--pink-glow);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .phone-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .country-code-select {
+            background: #06080e;
+            border: 1px solid rgba(255, 0, 127, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            padding: 0.75rem 0.6rem;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .btn-submit-modal {
+            width: 100%;
+            background: #ffffff;
+            color: #0d1117;
+            padding: 0.8rem;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit-modal:hover {
+            background: var(--neon-pink);
+            color: #ffffff;
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .modal-bottom-close {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 36px;
+            background: #ffffff;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
 
         @media(max-width: 900px) {
             .anime-bg-container { opacity: 0.35; width: 320px; }
@@ -447,15 +711,18 @@
             .nav-menu { display: none; }
             .timeline-meta div { justify-content: flex-start; }
             .timeline-header { flex-direction: column; align-items: flex-start; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- ANIME BACKGROUND -->
     <div class="anime-bg-container">
         <img src="anime-removebg-preview.png" alt="Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
 
+    <!-- NAVIGATION BAR -->
     <nav>
         <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="nav-brand" title="Visit my Instagram">
             <img src="ig-dp.jpg" alt="Profile" class="nav-avatar" onerror="this.src='assets/profile.jpg';">
@@ -487,6 +754,7 @@
 
     <div class="container">
 
+        <!-- ABOUT ME SECTION -->
         <div class="pink-card" id="about">
             <div class="hero-flex">
                 <div class="hero-left">
@@ -505,7 +773,7 @@
                         <a href="#experience" class="btn-pink">
                             View Experience <i class="fa-solid fa-arrow-down"></i>
                         </a>
-                        <a href="#contact" class="btn-outline-pink">Get In Touch</a>
+                        <button onclick="openModal()" class="btn-outline-pink">Get In Touch</button>
                     </div>
                 </div>
 
@@ -520,6 +788,7 @@
             </div>
         </div>
 
+        <!-- WORK HISTORY SECTION -->
         <div class="pink-card" id="experience">
             <div class="tag-sub">SOME OF MY LATEST WORKS</div>
             <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 1.5rem;">My <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Work History.</span></h2>
@@ -550,6 +819,7 @@
             </div>
         </div>
 
+        <!-- PROGRESS SECTION -->
         <div class="pink-card" id="progress">
             <div class="tag-sub">OPEN SOURCE / PROFILE</div>
             <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem;">Follow the <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">progress.</span></h2>
@@ -561,6 +831,7 @@
             </a>
         </div>
 
+        <!-- SKILLS SECTION -->
         <div class="pink-card" id="skills">
             <div class="tag-sub">02 / TECHNICAL COMPETENCIES</div>
             <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Skills & <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Tools</span></h2>
@@ -577,43 +848,110 @@
             </div>
         </div>
 
-        <div class="pink-card" id="contact">
-            <div class="tag-sub">03 / GET IN TOUCH</div>
-            <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.3rem;">Have something to <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">talk about?</span></h2>
-            <p style="color: var(--text-sub); margin-top: 0.5rem;">
-                I'm open to connecting with people who share an interest in technology, software engineering, and learning.
-            </p>
+    </div>
 
-            <div class="contact-grid">
-                <a href="mailto:marygracemontepalco25@gmail.com" class="contact-box">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span class="title">Email Address</span>
-                    <span class="val">marygracemontepalco25@gmail.com</span>
-                </a>
+    <!-- 🌟 FOOTER & CONNECT SECTION (KATULAD NG SA SAMPLE IMAGE) 🌟 -->
+    <footer class="footer-section" id="contact">
+        <!-- Pill-shaped Connect Here Button -->
+        <div class="connect-btn-wrapper">
+            <button onclick="openModal()" class="btn-connect-here">
+                Connect here <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
 
-                <a href="tel:09517054993" class="contact-box">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="title">Phone Number</span>
-                    <span class="val">0951-705-4993</span>
-                </a>
+        <div class="footer-grid">
+            <div class="footer-col-brand">
+                <h3>Mary Grace Montepalco</h3>
+                <p>Computer Engineering Student & Specialist</p>
+                <p style="margin-top: 0.4rem; color: #64748b;">Antipolo / Rizal, Philippines</p>
+            </div>
 
-                <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="contact-box">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span class="title">Instagram</span>
-                    <span class="val">@graciamontepalco</span>
-                </a>
+            <div>
+                <div class="footer-col-title">PAGES</div>
+                <ul class="footer-links-list">
+                    <li><a href="#about">Home</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#progress">Progress</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
 
-                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="contact-box">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="title">GitHub Profile</span>
-                    <span class="val">Gracia023105</span>
-                </a>
+            <div>
+                <div class="footer-col-title">RESOURCES</div>
+                <ul class="footer-links-list">
+                    <li><a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank">GitHub Repo</a></li>
+                    <li><a href="resume.pdf" download>Resume</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-col-title">CONNECT</div>
+                <p style="color: var(--text-sub); font-size: 0.85rem; margin-bottom: 0.8rem;">Wanna chat? Contact anywhere below.</p>
+                <div class="footer-social-icons">
+                    <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="footer-social-icon-box" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="footer-social-icon-box" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:marygracemontepalco25@gmail.com" class="footer-social-icon-box" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:09517054993" class="footer-social-icon-box" title="Phone"><i class="fa-solid fa-phone"></i></a>
+                </div>
             </div>
         </div>
 
+        <div class="footer-bottom">
+            <div>© 2026 Mary Grace B. Montepalco. All rights reserved.</div>
+            <div>Built with <span style="color: var(--neon-pink);">♥</span> by Mary Grace</div>
+        </div>
+    </footer>
+
+    <!-- 💬 ASK A QUESTION POPUP MODAL (GAYA NG SA PANGALAWANG LARAWAN) 💬 -->
+    <div class="modal-overlay" id="questionModal" onclick="closeModalOnOverlay(event)">
+        <div class="question-modal">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-regular fa-comment-dots"></i> Ask a Question
+                </div>
+                <button onclick="closeModal()" class="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Question</label>
+                    <textarea class="form-control" placeholder="Try asking a detailed question" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone number</label>
+                    <div class="phone-group">
+                        <select class="country-code-select">
+                            <option value="+63">PH 🇵🇭 (+63)</option>
+                            <option value="+1">US 🇺🇸 (+1)</option>
+                        </select>
+                        <input type="tel" class="form-control" placeholder="0912 345 6789">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-modal">Submit</button>
+            </form>
+
+            <div class="modal-bottom-close" onclick="closeModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
     </div>
 
+    <!-- SCRIPTS -->
     <script>
+        // Water Ripple Effect
         document.querySelectorAll('.pink-card').forEach(card => {
             let lastRippleTime = 0;
             card.addEventListener('mousemove', function (e) {
@@ -632,6 +970,27 @@
                 }
             });
         });
+
+        // Modal Controls
+        function openModal() {
+            document.getElementById('questionModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('questionModal').classList.remove('active');
+        }
+
+        function closeModalOnOverlay(e) {
+            if (e.target.id === 'questionModal') {
+                closeModal();
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! Your question has been recorded.');
+            closeModal();
+        }
     </script>
 </body>
 </html>
