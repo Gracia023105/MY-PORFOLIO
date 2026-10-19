@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mary Grace B. Montepalco | Portfolio</title>
+    <!-- Google Fonts: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -15,7 +17,7 @@
             --text-sub: #94a3b8;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-color);
@@ -174,7 +176,6 @@
             transform: translateY(-1px);
         }
 
-        /* MAIN CONTAINER (NAKA-ALIGN LAHAT NG CARDS AT FOOTER CARD DITO) */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -411,9 +412,7 @@
             transform: scale(1.08) translateY(-3px);
         }
 
-        /* ------------------------------------------------------------- */
-        /* 🌟 FOOTER SECTION (NAKA-CARD / BOX NA RIN PARA NAKA-ALIGN) 🌟 */
-        /* ------------------------------------------------------------- */
+        /* FOOTER CARD */
         .footer-card {
             padding: 2.5rem 2rem 1.5rem !important;
         }
@@ -532,7 +531,7 @@
             gap: 1rem;
         }
 
-        /* 💬 ASK A QUESTION MODAL POPUP 💬 */
+        /* MODAL POPUP */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -589,9 +588,7 @@
             gap: 0.5rem;
         }
 
-        .modal-title i {
-            color: var(--neon-pink);
-        }
+        .modal-title i { color: var(--neon-pink); }
 
         .btn-close-modal {
             background: transparent;
@@ -602,14 +599,9 @@
             transition: color 0.2s;
         }
 
-        .btn-close-modal:hover {
-            color: var(--neon-pink);
-        }
+        .btn-close-modal:hover { color: var(--neon-pink); }
 
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
+        .form-group { margin-bottom: 1.2rem; }
         .form-group label {
             display: block;
             font-size: 0.85rem;
@@ -635,16 +627,9 @@
             box-shadow: 0 0 12px var(--pink-glow);
         }
 
-        textarea.form-control {
-            resize: vertical;
-            min-height: 80px;
-        }
+        textarea.form-control { resize: vertical; min-height: 80px; }
 
-        .phone-group {
-            display: flex;
-            gap: 0.5rem;
-        }
-
+        .phone-group { display: flex; gap: 0.5rem; }
         .country-code-select {
             background: #06080e;
             border: 1px solid rgba(255, 0, 127, 0.3);
@@ -742,7 +727,7 @@
         </div>
     </nav>
 
-    <!-- CONTAINER NG MGA CARDS (SA NAKAPALOOB ANG LAHAT) -->
+    <!-- CONTAINER NG MGA CARDS -->
     <div class="container">
 
         <!-- ABOUT ME SECTION -->
@@ -839,7 +824,7 @@
             </div>
         </div>
 
-        <!-- 🌟 FOOTER & CONNECT CARD (NAKA-BOX AT PERFECT ALIGNED NA DIN) 🌟 -->
+        <!-- FOOTER & CONNECT CARD -->
         <div class="pink-card footer-card" id="contact">
             <div class="connect-btn-wrapper">
                 <button onclick="openModal()" class="btn-connect-here">
@@ -893,7 +878,7 @@
 
     </div>
 
-    <!-- 💬 ASK A QUESTION POPUP MODAL 💬 -->
+    <!-- ASK A QUESTION MODAL POPUP -->
     <div class="modal-overlay" id="questionModal" onclick="closeModalOnOverlay(event)">
         <div class="question-modal">
             <div class="modal-header">
