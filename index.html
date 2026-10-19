@@ -60,14 +60,14 @@
             }
         }
 
-        /* Top Navigation Bar */
+        /* 🌟 EXACT STYLE NA NAVIGATION BAR NA KATULAD NG SA INSPIRASYON MO 🌟 */
         nav {
             max-width: 1100px;
             margin: 0 auto 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             background: rgba(13, 17, 26, 0.9);
             border: 1px solid rgba(255, 0, 127, 0.4);
             border-radius: 40px;
@@ -78,12 +78,44 @@
             z-index: 100;
         }
 
-        .brand-logo {
-            font-size: 1.4rem;
-            font-weight: 900;
+        /* Left Side: Avatar + Name + Title sa Navbar */
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--neon-pink);
+            box-shadow: 0 0 10px var(--pink-glow);
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-white);
+        }
+
+        .nav-title-sub {
+            font-size: 0.7rem;
             color: var(--neon-pink);
-            text-shadow: 0 0 10px var(--neon-pink);
-            letter-spacing: 2px;
+        }
+
+        /* Right / Center Menu Links */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .nav-links {
@@ -95,7 +127,7 @@
         .nav-links a {
             color: var(--text-sub);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -103,6 +135,48 @@
         .nav-links a:hover {
             color: var(--neon-pink);
             text-shadow: 0 0 8px var(--neon-pink);
+        }
+
+        /* Social Icons & Resume Button sa Navbar */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-social-icon {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .nav-social-icon:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        /* White Pill-shaped Resume Button katulad ng sa reference */
+        .btn-nav-resume {
+            background-color: #ffffff;
+            color: #0d1117;
+            padding: 0.4rem 1.1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-nav-resume:hover {
+            background-color: var(--neon-pink);
+            color: #ffffff;
+            box-shadow: 0 0 20px var(--neon-pink);
+            transform: translateY(-1px);
         }
 
         .container {
@@ -392,6 +466,7 @@
             .hero-flex { flex-direction: column; text-align: center; }
             .hero-name { font-size: 2.2rem; }
             .side-box { width: 100%; }
+            .nav-menu { display: none; } /* Pwedeng i-adjust kung gusto mo ng hamburger menu sa mobile */
         }
     </style>
 </head>
@@ -402,15 +477,34 @@
         <img src="anime-removebg-preview.png" alt="Anime Character Background" class="anime-bg-img" onerror="this.src='anime.png'">
     </div>
 
-    <!-- Navigation Bar -->
+    <!-- 🌟 TOP NAVIGATION BAR (KAHAMIG NG REFERENCE MO) 🌟 -->
     <nav>
-        <div class="brand-logo">MGM</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#progress">Progress</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <a href="#about" class="nav-brand">
+            <img src="assets/profile.jpg" alt="Mary Grace" class="nav-avatar" onerror="this.style.display='none'">
+            <div class="nav-brand-text">
+                <span class="nav-name">Mary Grace Montepalco</span>
+                <span class="nav-title-sub">CpE Student</span>
+            </div>
+        </a>
+
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#progress">Progress</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="nav-social-icon" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <!-- Resume Button sa Kanan -->
+                <a href="#contact" class="btn-nav-resume">
+                    Resume <i class="fa-solid fa-download" style="font-size: 0.75rem;"></i>
+                </a>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
