@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mary Grace B. Montepalco | Cyber Portfolio</title>
+    <title>Mary Grace B. Montepalco | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -26,7 +26,6 @@
             position: relative;
         }
 
-        /* 🌸 FIT SA LEFT SIDE (PERFECT COVERAGE AT WALANG BAGO SA BACKGROUND FILE) 🌸 */
         .anime-bg-container {
             position: fixed;
             left: 0;
@@ -52,15 +51,10 @@
         }
 
         @keyframes pinkPulse {
-            0% {
-                filter: drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.65)) sepia(100%) hue-rotate(290deg) saturate(450%);
-            }
-            100% {
-                filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%);
-            }
+            0% { filter: drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.65)) sepia(100%) hue-rotate(290deg) saturate(450%); }
+            100% { filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%); }
         }
 
-        /* 🌟 TOP NAVIGATION BAR (KATULAD NG REFERENCE) 🌟 */
         nav {
             max-width: 1100px;
             margin: 0 auto 2.5rem;
@@ -78,7 +72,6 @@
             z-index: 100;
         }
 
-        /* Left Side: Instagram DP + Name + Subtitle */
         .nav-brand {
             display: flex;
             align-items: center;
@@ -87,9 +80,7 @@
             transition: opacity 0.3s ease;
         }
 
-        .nav-brand:hover {
-            opacity: 0.85;
-        }
+        .nav-brand:hover { opacity: 0.85; }
 
         .nav-avatar {
             width: 38px;
@@ -114,17 +105,9 @@
             gap: 5px;
         }
 
-        .nav-name i {
-            font-size: 0.75rem;
-            color: var(--neon-pink);
-        }
+        .nav-name i { font-size: 0.75rem; color: var(--neon-pink); }
+        .nav-title-sub { font-size: 0.7rem; color: var(--neon-pink); }
 
-        .nav-title-sub {
-            font-size: 0.7rem;
-            color: var(--neon-pink);
-        }
-
-        /* Right / Center Menu Links */
         .nav-menu {
             display: flex;
             align-items: center;
@@ -150,7 +133,6 @@
             text-shadow: 0 0 8px var(--neon-pink);
         }
 
-        /* Social Icons & Resume Button sa Navbar */
         .nav-actions {
             display: flex;
             align-items: center;
@@ -169,7 +151,6 @@
             text-shadow: 0 0 10px var(--neon-pink);
         }
 
-        /* White Pill-shaped Resume Button katulad ng sa reference */
         .btn-nav-resume {
             background-color: #ffffff;
             color: #0d1117;
@@ -202,7 +183,6 @@
             z-index: 10;
         }
 
-        /* Neon Pink Card Style */
         .pink-card {
             background: var(--card-bg);
             border: 2px solid var(--neon-pink);
@@ -213,7 +193,6 @@
             box-shadow: 0 0 20px rgba(255, 0, 127, 0.25), inset 0 0 15px rgba(255, 0, 127, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             backdrop-filter: blur(12px);
-            cursor: pointer;
         }
 
         .pink-card:hover {
@@ -221,7 +200,6 @@
             box-shadow: 0 0 35px var(--neon-pink), inset 0 0 25px rgba(255, 0, 127, 0.3);
         }
 
-        /* 💧 WATER DROP RIPPLE ANIMATION 💧 */
         .hover-ripple {
             position: absolute;
             border-radius: 50%;
@@ -233,21 +211,10 @@
         }
 
         @keyframes waterDropRipple {
-            0% {
-                width: 0px;
-                height: 0px;
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(0);
-            }
-            100% {
-                width: 380px;
-                height: 380px;
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(1);
-            }
+            0% { width: 0px; height: 0px; opacity: 1; transform: translate(-50%, -50%) scale(0); }
+            100% { width: 380px; height: 380px; opacity: 0; transform: translate(-50%, -50%) scale(1); }
         }
 
-        /* HERO SECTION LAYOUT */
         .hero-flex {
             display: flex;
             justify-content: space-between;
@@ -257,10 +224,7 @@
             min-height: 65vh;
         }
 
-        .hero-left {
-            flex: 1.2;
-            min-width: 300px;
-        }
+        .hero-left { flex: 1.2; min-width: 300px; }
 
         .tag-sub {
             color: var(--neon-pink);
@@ -292,25 +256,9 @@
             letter-spacing: -1px;
         }
 
-        .hero-name span {
-            color: var(--neon-pink);
-            text-shadow: 0 0 20px var(--neon-pink);
-        }
-
-        .hero-course {
-            font-size: 1.25rem;
-            color: #f8fafc;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
-        }
-
-        .hero-about {
-            color: var(--text-sub);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.8rem;
-        }
+        .hero-name span { color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink); }
+        .hero-course { font-size: 1.25rem; color: #f8fafc; font-weight: 700; margin-bottom: 1.2rem; text-shadow: 0 0 10px rgba(255, 0, 127, 0.4); }
+        .hero-about { color: var(--text-sub); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.8rem; }
 
         .btn-pink {
             display: inline-flex;
@@ -329,10 +277,7 @@
             cursor: pointer;
         }
 
-        .btn-pink:hover {
-            box-shadow: 0 0 35px var(--neon-pink), 0 0 50px var(--neon-pink);
-            transform: scale(1.03);
-        }
+        .btn-pink:hover { box-shadow: 0 0 35px var(--neon-pink), 0 0 50px var(--neon-pink); transform: scale(1.03); }
 
         .btn-outline-pink {
             display: inline-flex;
@@ -350,13 +295,8 @@
             transition: all 0.3s ease;
         }
 
-        .btn-outline-pink:hover {
-            background: var(--neon-pink);
-            color: #000;
-            box-shadow: 0 0 30px var(--neon-pink);
-        }
+        .btn-outline-pink:hover { background: var(--neon-pink); color: #000; box-shadow: 0 0 30px var(--neon-pink); }
 
-        /* Right Side Graphic Box */
         .side-box {
             flex: 0.8;
             background: rgba(6, 8, 14, 0.85);
@@ -388,7 +328,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* 💼 WORK HISTORY STYLES (KATULAD NG SAMPLE SA LARAWAN) 💼 */
+        /* Timeline / Work History */
         .timeline {
             position: relative;
             margin-top: 1.5rem;
@@ -396,14 +336,8 @@
             border-left: 2px solid rgba(255, 0, 127, 0.4);
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
+        .timeline-item { position: relative; margin-bottom: 2rem; }
+        .timeline-item:last-child { margin-bottom: 0; }
 
         .timeline-dot {
             position: absolute;
@@ -445,57 +379,103 @@
             font-weight: 700;
         }
 
-        .company-name {
-            font-size: 0.9rem;
-            color: var(--neon-pink);
-            font-weight: 600;
-        }
+        .company-name { font-size: 0.9rem; color: var(--neon-pink); font-weight: 600; }
+        .timeline-meta { text-align: right; font-size: 0.85rem; color: var(--text-sub); }
+        .timeline-meta div { display: flex; align-items: center; justify-content: flex-end; gap: 0.4rem; }
 
-        .timeline-meta {
-            text-align: right;
-            font-size: 0.85rem;
-            color: var(--text-sub);
-        }
+        .work-desc { list-style: none; margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed rgba(255, 255, 255, 0.1); }
+        .work-desc li { position: relative; padding-left: 1.2rem; color: var(--text-sub); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.4rem; }
+        .work-desc li::before { content: "•"; color: var(--neon-pink); font-weight: bold; position: absolute; left: 0; }
 
-        .timeline-meta div {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 0.4rem;
-        }
-
-        .work-desc {
-            list-style: none;
-            margin-top: 1rem;
-            padding-top: 0.8rem;
-            border-top: 1px dashed rgba(255, 255, 255, 0.1);
-        }
-
-        .work-desc li {
-            position: relative;
-            padding-left: 1.2rem;
-            color: var(--text-sub);
-            font-size: 0.92rem;
-            line-height: 1.6;
-            margin-bottom: 0.4rem;
-        }
-
-        .work-desc li::before {
-            content: "•";
-            color: var(--neon-pink);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* 🌸 SKILLS & TOOLS BADGES 🌸 */
-        .skills-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-            margin-top: 1.4rem;
-        }
+        .skills-badges { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.4rem; }
 
         .badge {
             background: #06080e;
             border: 1.5px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 0.7rem 1.4rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            box-shadow: 0 0 10px rgba(255,0,127,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .badge:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 0 0 25px var(--neon-pink), 0 0 40px var(--neon-pink);
+            transform: scale(1.08) translateY(-3px);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-box {
+            background: #06080e;
+            border: 1.5px solid var(--neon-pink);
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-box i { font-size: 2rem; color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); transition: all 0.3s ease; }
+        .contact-box span.title { font-size: 0.75rem; color: #ff80bf; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .contact-box span.val { font-size: 0.9rem; font-weight: bold; word-break: break-all; }
+
+        .contact-box:hover { background: var(--neon-pink); color: #000; box-shadow: 0 0 25px var(--neon-pink); transform: translateY(-3px); }
+        .contact-box:hover i, .contact-box:hover span.title { color: #000; text-shadow: none; }
+
+        @media(max-width: 900px) {
+            .anime-bg-container { opacity: 0.35; width: 320px; }
+            .hero-flex { flex-direction: column; text-align: center; }
+            .hero-name { font-size: 2.2rem; }
+            .side-box { width: 100%; }
+            .nav-menu { display: none; }
+            .timeline-meta div { justify-content: flex-start; }
+            .timeline-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="anime-bg-container">
+        <img src="anime-removebg-preview.png" alt="Background" class="anime-bg-img" onerror="this.src='anime.png'">
+    </div>
+
+    <nav>
+        <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="nav-brand" title="Visit my Instagram">
+            <img src="ig-dp.jpg" alt="Profile" class="nav-avatar" onerror="this.src='assets/profile.jpg';">
+            <div class="nav-brand-text">
+                <span class="nav-name">Mary Grace Montepalco <i class="fa-brands fa-instagram"></i></span>
+                <span class="nav-title-sub">CpE Student</span>
+            </div>
+        </a>
+
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#progress">Progress</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="nav-social-icon" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="resume.pdf" download="Mary_Grace_Montepalco_Resume.pdf" class="
