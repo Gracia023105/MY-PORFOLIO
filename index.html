@@ -53,70 +53,6 @@
         }
 
         @keyframes pinkPulse {
-            0% { filter: drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.65Inilagay ko na ang **"My Projects Featured"** section[cite: 10] na katulad ng nasa larawan[cite: 10]! 
-
-May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaScript)[cite: 10], **Java Academic Projects** (OOP, Data Structures), at **Network Configuration Simulation** (Cisco Packet Tracer). May mga tech stack badges[cite: 10], external links[cite: 10], at button na **"See all Projects"**[cite: 10] sa ibaba!
-
----
-
-### Kopyahin ang Buong Code sa iyong `index.html`:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mary Grace B. Montepalco | Portfolio</title>
-    <!-- Google Fonts: Outfit -->
-    <link href="[https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-    <style>
-        :root {
-            --neon-pink: #ff007f;
-            --pink-glow: rgba(255, 0, 127, 0.6);
-            --card-bg: rgba(13, 17, 26, 0.92);
-            --bg-color: #06080e;
-            --text-white: #f8fafc;
-            --text-sub: #94a3b8;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-white);
-            padding: 2rem 1rem 3rem;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        .anime-bg-container {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            top: 0;
-            width: 45vw;
-            max-width: 600px;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.75;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-        }
-
-        .anime-bg-img {
-            height: 100vh;
-            width: 100%;
-            object-fit: cover;
-            object-position: left center;
-            filter: drop-shadow(0 0 25px #ff007f) drop-shadow(0 0 50px rgba(255, 0, 127, 0.85)) sepia(100%) hue-rotate(290deg) saturate(500%);
-            animation: pinkPulse 3s infinite alternate;
-        }
-
-        @keyframes pinkPulse {
             0% { filter: drop-shadow(0 0 18px #ff007f) drop-shadow(0 0 35px rgba(255, 0, 127, 0.65)) sepia(100%) hue-rotate(290deg) saturate(450%); }
             100% { filter: drop-shadow(0 0 40px #ff007f) drop-shadow(0 0 80px rgba(255, 0, 127, 1)) sepia(100%) hue-rotate(290deg) saturate(650%); }
         }
@@ -454,9 +390,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
         .work-desc li { position: relative; padding-left: 1.2rem; color: var(--text-sub); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.4rem; }
         .work-desc li::before { content: "•"; color: var(--neon-pink); font-weight: bold; position: absolute; left: 0; }
 
-        /* ------------------------------------------------------------- */
-        /* 🚀 FEATURED PROJECTS CARDS (KATULAD NG SA LARAWAN) 🚀 */
-        /* ------------------------------------------------------------- */
+        /* FEATURED PROJECTS CARDS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -869,7 +803,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
 
     <!-- NAVIGATION BAR -->
     <nav>
-        <a href="[https://www.instagram.com/graciamontepalco](https://www.instagram.com/graciamontepalco)" target="_blank" class="nav-brand" title="Visit my Instagram">
+        <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="nav-brand" title="Visit my Instagram">
             <img src="ig-dp.jpg" alt="Profile" class="nav-avatar" onerror="this.src='assets/profile.jpg';">
             <div class="nav-brand-text">
                 <span class="nav-name">Mary Grace Montepalco <i class="fa-brands fa-instagram"></i></span>
@@ -887,7 +821,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
             </ul>
 
             <div class="nav-actions">
-                <a href="[https://github.com/Gracia023105/MY-PORFOLIO](https://github.com/Gracia023105/MY-PORFOLIO)" target="_blank" class="nav-social-icon" title="GitHub">
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="nav-social-icon" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
                 <a href="resume.pdf" download="Mary_Grace_Montepalco_Resume.pdf" class="btn-nav-resume">
@@ -965,7 +899,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
             </div>
         </div>
 
-        <!-- 🌟 MY PROJECTS FEATURED SECTION (GAYA NG SA LARAWAN) 🌟 -->
+        <!-- MY PROJECTS FEATURED SECTION -->
         <div class="pink-card" id="projects">
             <div class="tag-sub">SOME OF MY LATEST WORKS</div>
             <h2 style="font-size: 2.2rem; font-weight: 900;">My <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Projects Featured.</span></h2>
@@ -980,8 +914,8 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
                         <div class="project-header-top">
                             <div class="project-title">Personal Portfolio</div>
                             <div class="project-links">
-                                <a href="[https://github.com/Gracia023105/MY-PORFOLIO](https://github.com/Gracia023105/MY-PORFOLIO)" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                <a href="[https://gracia023105.github.io/MY-PORFOLIO/](https://gracia023105.github.io/MY-PORFOLIO/)" target="_blank" title="Live Site"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://gracia023105.github.io/MY-PORFOLIO/" target="_blank" title="Live Site"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                         <p class="project-desc">A modern, responsive, and neon-styled web portfolio showcasing my academic progress, technical skills, and work history.</p>
@@ -1003,7 +937,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
                         <div class="project-header-top">
                             <div class="project-title">Java Academic Systems</div>
                             <div class="project-links">
-                                <a href="[https://github.com/Gracia023105/MY-PORFOLIO](https://github.com/Gracia023105/MY-PORFOLIO)" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
                             </div>
                         </div>
                         <p class="project-desc">Object-Oriented Programming (OOP) projects created for Computer Engineering coursework, focusing on class structures and data handling.</p>
@@ -1024,7 +958,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
                         <div class="project-header-top">
                             <div class="project-title">Packet Tracer Network Lab</div>
                             <div class="project-links">
-                                <a href="[https://github.com/Gracia023105/MY-PORFOLIO](https://github.com/Gracia023105/MY-PORFOLIO)" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
                             </div>
                         </div>
                         <p class="project-desc">Cisco Packet Tracer simulation labs designed for network topology routing, IP addressing, and router configurations.</p>
@@ -1038,7 +972,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
             </div>
 
             <div style="text-align: center; margin-top: 1rem;">
-                <a href="[https://github.com/Gracia023105/MY-PORFOLIO](https://github.com/Gracia023105/MY-PORFOLIO)" target="_blank" class="btn-pink">
+                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-pink">
                     See all Projects <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -1090,7 +1024,7 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
                 <div>
                     <div class="footer-col-title">RESOURCES</div>
                     <ul class="footer-links-list">
-                        <li><a href="[https://github.com/Gracia023105/MY-PORFOLIO](https://github.com/Gracia023105/MY-PORFOLIO)" target="_blank">GitHub Repo</a></li>
+                        <li><a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank">GitHub Repo</a></li>
                         <li><a href="resume.pdf" download>Resume</a></li>
                     </ul>
                 </div>
@@ -1099,8 +1033,8 @@ May kasama na itong cards para sa iyong **Personal Portfolio** (HTML, CSS, JavaS
                     <div class="footer-col-title">CONNECT</div>
                     <p style="color: var(--text-sub); font-size: 0.85rem; margin-bottom: 0.8rem;">Wanna chat? Contact anywhere below.</p>
                     <div class="footer-social-icons">
-                        <a href="[https://www.instagram.com/graciamontepalco](https://www.instagram.com/graciamontepalco)" target="_blank" class="footer-social-icon-box" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="[https://github.com/Gracia023105/MY-PORFOLIO](https://github.com/Gracia023105/MY-PORFOLIO)" target="_blank" class="footer-social-icon-box" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/graciamontepalco" target="_blank" class="footer-social-icon-box" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="footer-social-icon-box" title="GitHub"><i class="fa-brands fa-github"></i></a>
                         <a href="mailto:marygracemontepalco25@gmail.com" class="footer-social-icon-box" title="Email"><i class="fa-solid fa-envelope"></i></a>
                         <a href="tel:09517054993" class="footer-social-icon-box" title="Phone"><i class="fa-solid fa-phone"></i></a>
                     </div>
