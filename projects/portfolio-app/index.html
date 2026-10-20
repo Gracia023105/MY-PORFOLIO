@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Web App | Project Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --neon-pink: #ff007f; --bg-color: #06080e; --card-bg: rgba(13, 17, 26, 0.95); --text-sub: #94a3b8; }
+        body { background-color: var(--bg-color); color: #ffffff; font-family: 'Outfit', sans-serif; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; color: var(--neon-pink); text-decoration: none; font-weight: 700; margin-bottom: 2rem; border: 1px solid var(--neon-pink); padding: 0.5rem 1.2rem; border-radius: 20px; transition: all 0.3s; }
+        .btn-back:hover { background: var(--neon-pink); color: #000; box-shadow: 0 0 15px var(--neon-pink); }
+        .details-card { background: var(--card-bg); border: 2px solid var(--neon-pink); border-radius: 20px; padding: 2.5rem; box-shadow: 0 0 25px rgba(255, 0, 127, 0.25); }
+        h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; color: #ffffff; }
+        .subtitle { color: #38bdf8; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem; }
+        p { color: var(--text-sub); line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem; }
+        .img-container { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 0, 127, 0.4); margin: 1.5rem 0; }
+        .img-container img { width: 100%; display: block; }
+        .btn-external { display: inline-block; background: #ffffff; color: #000; padding: 0.75rem 1.8rem; border-radius: 10px; font-weight: 800; text-decoration: none; transition: all 0.3s; margin-right: 1rem; }
+        .btn-external:hover { background: var(--neon-pink); color: #fff; box-shadow: 0 0 20px var(--neon-pink); }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+    <div class="details-card">
+        <h1>Personal Portfolio Web App</h1>
+        <div class="subtitle">HTML5 / CSS3 / JAVASCRIPT / GITHUB PAGES</div>
+        <p>A modern, responsive, and neon-styled web portfolio showcasing my academic progress in Computer Engineering, technical competencies, and bookkeeping work history.</p>
+        <div class="img-container">
+            <img src="../../images/portfolio-preview.png" alt="Portfolio Web App Preview">
+        </div>
+        <h3>Tech Stack & Features:</h3>
+        <ul style="color: var(--text-sub); margin-left: 1.5rem; margin-bottom: 2rem; line-height: 1.8;">
+            <li>Pure CSS Glassmorphism & Neon Glow Aesthetics.</li>
+            <li>Infinite Auto-Scrolling Skills Marquee.</li>
+            <li>Interactive Ask a Question Modal Popup Form.</li>
+            <li>Hosted via GitHub Pages for global accessibility.</li>
+        </ul>
+        <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" class="btn-external">
+            GitHub Repository <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+</body>
+</html>
