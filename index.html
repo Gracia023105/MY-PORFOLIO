@@ -584,10 +584,13 @@
                     </div>
                 </div>
 
-                <!-- Project Card 4: Personal Portfolio Web App -->
+                <!-- Project Card 4: Personal Portfolio Web App (Fixed to .png) -->
                 <div class="project-card">
                     <div class="project-img-box" onclick="window.open('https://gracia023105.github.io/MY-PORFOLIO/', '_blank')">
-                        <i class="fa-solid fa-laptop-code" style="font-size: 3.8rem; color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink);"></i>
+                        <img src="images/portfolio-preview.png" alt="Portfolio Web App Preview" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="fallback-box" style="display:none;">
+                            <i class="fa-solid fa-laptop-code" style="font-size: 3.8rem; color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink);"></i>
+                        </div>
                     </div>
                     <div class="project-body">
                         <div class="project-header-top">
