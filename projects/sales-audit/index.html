@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Journal Audit Ledger | Project Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-pink: #ff007f;
+            --bg-color: #06080e;
+            --card-bg: rgba(13, 17, 26, 0.95);
+            --text-sub: #94a3b8;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            padding: 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--neon-pink);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            border: 1px solid var(--neon-pink);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .btn-back:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+        .details-card {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-pink);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.25);
+        }
+        h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; color: #ffffff; }
+        .subtitle { color: var(--neon-pink); font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem; }
+        p { color: var(--text-sub); line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem; }
+        .img-container { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 0, 127, 0.4); margin: 1.5rem 0; }
+        .img-container img { width: 100%; display: block; }
+        .btn-external {
+            display: inline-block;
+            background: #ffffff;
+            color: #000;
+            padding: 0.75rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-external:hover { background: var(--neon-pink); color: #fff; box-shadow: 0 0 20px var(--neon-pink); }
+    </style>
+</head>
+<body>
+
+    <!-- BUMALIK SA MAIN PORTFOLIO -->
+    <a href="../../index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+
+    <div class="details-card">
+        <h1>Sales Journal Audit Ledger</h1>
+        <div class="subtitle">FINANCIAL AUDITING & BOOKKEEPING SYSTEM</div>
+
+        <p>
+            Detailed monthly sales auditing ledger categorizing gross sales, net sales, VAT amounts, and discount adjustments for business compliance and financial accuracy.
+        </p>
+
+        <!-- PREVIEW IMAGE -->
+        <div class="img-container">
+            <img src="../../images/sales.png" alt="Sales Journal Audit Ledger Preview">
+        </div>
+
+        <h3>Key Features:</h3>
+        <ul style="color: var(--text-sub); margin-left: 1.5rem; margin-bottom: 2rem; line-height: 1.8;">
+            <li>Automated gross-to-net sales calculation.</li>
+            <li>Categorization of Senior / PWD discounts.</li>
+            <li>VAT classification for auditing purposes.</li>
+        </ul>
+
+        <!-- LINK SA LIVE GOOGLE SHEET -->
+        <a href="https://docs.google.com/spreadsheets/d/1YVBGlkUuuMQdEdW9uuXh5Dq28gPr45zG/edit?usp=sharing" target="_blank" class="btn-external">
+            View Live Google Sheet <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
+
+</body>
+</html>
