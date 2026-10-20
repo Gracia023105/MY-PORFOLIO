@@ -158,7 +158,7 @@
             box-shadow: 0 0 35px var(--neon-pink), inset 0 0 25px rgba(255, 0, 127, 0.3);
         }
 
-        /* HERO FORMAT */
+        /* HERO FORMAT - INSPIRED STYLE */
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
@@ -166,10 +166,31 @@
             padding: 1rem 0;
         }
 
-        .tag-sub { color: var(--neon-pink); font-size: 0.85rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.8rem; text-shadow: 0 0 8px var(--neon-pink); display: flex; align-items: center; gap: 8px; }
-        .status-dot { width: 8px; height: 8px; background-color: var(--neon-pink); border-radius: 50%; box-shadow: 0 0 8px var(--neon-pink); display: inline-block; }
+        .hero-main-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            color: #f8fafc;
+        }
+
+        .hero-main-title .gradient-text-1 {
+            color: #38bdf8;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+        }
+
+        .hero-main-title .gradient-text-2 {
+            color: #00e676;
+            text-shadow: 0 0 15px rgba(0, 230, 118, 0.6);
+        }
+
+        .hero-main-title .gradient-text-3 {
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px var(--neon-pink);
+        }
         
-        .hero-about { color: var(--text-sub); font-size: 1.15rem; line-height: 1.8; margin-bottom: 0; max-width: 850px; }
+        .hero-about { color: var(--text-sub); font-size: 1.15rem; line-height: 1.8; max-width: 850px; }
 
         .btn-pink {
             display: inline-flex;
@@ -364,6 +385,7 @@
 
         @media(max-width: 900px) {
             .anime-bg-container { opacity: 0.2; }
+            .hero-main-title { font-size: 2.1rem; }
             .nav-menu { display: none; }
             .timeline-meta div { justify-content: flex-start; }
             .timeline-header { flex-direction: column; align-items: flex-start; }
@@ -413,9 +435,11 @@
         <!-- ABOUT ME SECTION -->
         <div class="pink-card" id="about">
             <div class="hero-content">
-                <div class="tag-sub">
-                    <span class="status-dot"></span> ABOUT ME
-                </div>
+                <h1 class="hero-main-title">
+                    Engineering <span class="gradient-text-1">reliable systems</span> and <br>
+                    <span class="gradient-text-2">precise financial frameworks</span> <br>
+                    that <span class="gradient-text-3">scale.</span>
+                </h1>
                 
                 <p class="hero-about">
                     As a Computer Engineering student, I am eager to further expand my knowledge in Software. Although my work experiences are different from my current course, I firmly believe that "Facing various challenges at work leads to meaningful growth."
