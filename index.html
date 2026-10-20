@@ -334,22 +334,17 @@
             background: #0d121d;
             border-bottom: 1px solid rgba(255, 0, 127, 0.25);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             position: relative;
             cursor: pointer;
+            transition: background 0.3s ease;
         }
 
-        .project-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .project-card:hover .project-img-box img {
-            transform: scale(1.05);
+        .project-img-box:hover {
+            background: #131926;
         }
 
         .project-body {
@@ -385,63 +380,7 @@
         .footer-social-icon-box:hover { border-color: var(--neon-pink); color: var(--neon-pink); box-shadow: 0 0 10px var(--neon-pink); }
         .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.2rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-sub); font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
 
-        /* IMAGE LIGHTBOX POPUP MODAL (PAG KINLIK ANG PICTURE LALAKI SA SCREEN) */
-        .image-modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .image-modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .image-modal-content {
-            max-width: 90vw;
-            max-height: 85vh;
-            border: 2px solid var(--neon-pink);
-            border-radius: 16px;
-            box-shadow: 0 0 40px var(--neon-pink);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .image-modal-content img {
-            width: 100%;
-            height: auto;
-            max-height: 85vh;
-            display: block;
-        }
-
-        .close-img-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: var(--neon-pink);
-            color: #000;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 0 15px var(--neon-pink);
-        }
-
-        /* MODAL POPUP CONTACT */
+        /* MODAL POPUP */
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .question-modal { background: #0d121d; border: 1.5px solid var(--neon-pink); border-radius: 20px; width: 100%; max-width: 480px; padding: 2rem; box-shadow: 0 0 40px rgba(255, 0, 127, 0.3); position: relative; transform: translateY(20px); transition: transform 0.3s ease; }
@@ -597,7 +536,7 @@
             </div>
         </div>
 
-        <!-- MY PROJECTS FEATURED SECTION (VISUAL PREVIEWS & CLICKABLE LIGHTBOX) -->
+        <!-- MY PROJECTS FEATURED SECTION (WITH YOUR LIVE READ-ONLY GOOGLE DRIVE LINKS) -->
         <div class="pink-card" id="projects">
             <div class="tag-sub">SOME OF MY LATEST WORKS</div>
             <h2 style="font-size: 2.2rem; font-weight: 900;">My <span style="color: var(--neon-pink); text-shadow: 0 0 15px var(--neon-pink);">Projects Featured.</span></h2>
@@ -606,17 +545,20 @@
                 
                 <!-- Project Card 1: Daily Remittance System -->
                 <div class="project-card">
-                    <div class="project-img-box" onclick="openImageModal('remittance_preview.png')" title="Click to view full preview">
-                        <img src="remittance_preview.png" alt="Daily Remittance Audit Table" onerror="this.src='https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80';">
+                    <div class="project-img-box" onclick="window.open('https://docs.google.com/spreadsheets/d/1OpRugra8n21Z27tAf_b7BzbIv_nL_QBU/edit?usp=sharing&ouid=106990919970422494639&rtpof=true&sd=true', '_blank')">
+                        <i class="fa-solid fa-file-excel" style="font-size: 3.5rem; color: #00e676; text-shadow: 0 0 20px #00e676; margin-bottom: 10px;"></i>
+                        <span style="font-size: 0.75rem; color: #00e676; font-weight: 700; background: rgba(0,230,118,0.15); padding: 4px 12px; border-radius: 12px; border: 1px solid #00e676;">
+                            <i class="fa-solid fa-lock"></i> Click to View Live Sheet (Protected)
+                        </span>
                     </div>
                     <div class="project-body">
                         <div class="project-header-top">
                             <div class="project-title">Daily Remittance & Sales Audit System</div>
                             <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openImageModal('remittance_preview.png')" title="View Full Table Preview"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></a>
+                                <a href="https://docs.google.com/spreadsheets/d/1OpRugra8n21Z27tAf_b7BzbIv_nL_QBU/edit?usp=sharing&ouid=106990919970422494639&rtpof=true&sd=true" target="_blank" title="View Read-Only Google Sheet"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
-                        <p class="project-desc">A structured financial logging system tracking daily transactions, Cash/GCash/Credit payments, Senior/PWD discounts, and actual cash-out reconciliation[cite: 5].</p>
+                        <p class="project-desc">A structured financial logging system tracking daily transactions, Cash/GCash/Credit payments, Senior/PWD discounts, and actual cash-out reconciliation.</p>
                         <div class="project-tags">
                             <span class="project-tag">EXCEL FINANCIAL LOGS</span>
                             <span class="project-tag">BOOKKEEPING</span>
@@ -625,19 +567,22 @@
                     </div>
                 </div>
 
-                <!-- Project Card 2: Purchases & Expense Ledger -->
+                <!-- Project Card 2: Purchases, Expenses & Vendor Journal -->
                 <div class="project-card">
-                    <div class="project-img-box" onclick="openImageModal('expense_preview.png')" title="Click to view full preview">
-                        <img src="expense_preview.png" alt="Expense Ledger Table" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80';">
+                    <div class="project-img-box" onclick="window.open('https://docs.google.com/spreadsheets/d/1QEHgyClImGa1V-1STlNkc5te3xA0xwEj/edit?usp=sharing&ouid=106990919970422494639&rtpof=true&sd=true', '_blank')">
+                        <i class="fa-solid fa-calculator" style="font-size: 3.5rem; color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink); margin-bottom: 10px;"></i>
+                        <span style="font-size: 0.75rem; color: var(--neon-pink); font-weight: 700; background: rgba(255,0,127,0.15); padding: 4px 12px; border-radius: 12px; border: 1px solid var(--neon-pink);">
+                            <i class="fa-solid fa-lock"></i> Click to View Live Sheet (Protected)
+                        </span>
                     </div>
                     <div class="project-body">
                         <div class="project-header-top">
                             <div class="project-title">Purchases, Expenses & Vendor Journal</div>
                             <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openImageModal('expense_preview.png')" title="View Full Table Preview"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></a>
+                                <a href="https://docs.google.com/spreadsheets/d/1QEHgyClImGa1V-1STlNkc5te3xA0xwEj/edit?usp=sharing&ouid=106990919970422494639&rtpof=true&sd=true" target="_blank" title="View Read-Only Google Sheet"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
-                        <p class="project-desc">Comprehensive monthly ledger tracking vendor invoices, vatable/non-vatable purchases, payroll expenditures, and executive financial summaries[cite: 5].</p>
+                        <p class="project-desc">Comprehensive monthly ledger tracking vendor invoices, vatable/non-vatable purchases, payroll expenditures, and executive financial summaries.</p>
                         <div class="project-tags">
                             <span class="project-tag">ACCOUNTS PAYABLE</span>
                             <span class="project-tag">EXPENSE LEDGER</span>
@@ -646,25 +591,26 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3: Personal Portfolio -->
+                <!-- Project Card 3: Sales Journal Audit Ledger -->
                 <div class="project-card">
-                    <div class="project-img-box" onclick="window.open('https://gracia023105.github.io/MY-PORFOLIO/', '_blank')">
-                        <i class="fa-solid fa-laptop-code" style="font-size: 4rem; color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink);"></i>
+                    <div class="project-img-box" onclick="window.open('https://docs.google.com/spreadsheets/d/1YVBGlkUuuMQdEdW9uuXh5Dq28gPr45zG/edit?usp=sharing&ouid=106990919970422494639&rtpof=true&sd=true', '_blank')">
+                        <i class="fa-solid fa-receipt" style="font-size: 3.5rem; color: #38bdf8; text-shadow: 0 0 20px #38bdf8; margin-bottom: 10px;"></i>
+                        <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 700; background: rgba(56,189,248,0.15); padding: 4px 12px; border-radius: 12px; border: 1px solid #38bdf8;">
+                            <i class="fa-solid fa-lock"></i> Click to View Live Sheet (Protected)
+                        </span>
                     </div>
                     <div class="project-body">
                         <div class="project-header-top">
-                            <div class="project-title">Personal Portfolio Web App</div>
+                            <div class="project-title">Sales Journal Audit Ledger</div>
                             <div class="project-links">
-                                <a href="https://github.com/Gracia023105/MY-PORFOLIO" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                <a href="https://gracia023105.github.io/MY-PORFOLIO/" target="_blank" title="Live Site"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://docs.google.com/spreadsheets/d/1YVBGlkUuuMQdEdW9uuXh5Dq28gPr45zG/edit?usp=sharing&ouid=106990919970422494639&rtpof=true&sd=true" target="_blank" title="View Read-Only Google Sheet"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
-                        <p class="project-desc">A modern, responsive, and neon-styled web portfolio showcasing my academic progress, technical competencies, and work history.</p>
+                        <p class="project-desc">Detailed monthly sales auditing ledger categorizing gross sales, net sales, VAT amounts, and discount adjustments.</p>
                         <div class="project-tags">
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">CSS3</span>
-                            <span class="project-tag">JAVASCRIPT</span>
-                            <span class="project-tag">GITHUB PAGES</span>
+                            <span class="project-tag">SALES JOURNAL</span>
+                            <span class="project-tag">VAT AUDITING</span>
+                            <span class="project-tag">FINANCIAL RECORDS</span>
                         </div>
                     </div>
                 </div>
@@ -731,14 +677,6 @@
 
     </div>
 
-    <!-- FULL SCREEN IMAGE PREVIEW MODAL (LIGHTBOX) -->
-    <div class="image-modal-overlay" id="imageModal" onclick="closeImageModal()">
-        <div class="image-modal-content" onclick="event.stopPropagation()">
-            <div class="close-img-modal" onclick="closeImageModal()">&times;</div>
-            <img id="modalImageSrc" src="" alt="Full Preview">
-        </div>
-    </div>
-
     <!-- ASK A QUESTION MODAL POPUP -->
     <div class="modal-overlay" id="questionModal" onclick="closeModalOnOverlay(event)">
         <div class="question-modal">
@@ -787,19 +725,7 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Image Lightbox Viewer
-        function openImageModal(imgSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImageSrc');
-            modalImg.src = imgSrc;
-            modal.classList.add('active');
-        }
-
-        function closeImageModal() {
-            document.getElementById('imageModal').classList.remove('active');
-        }
-
-        // Contact Modal Controls
+        // Modal Controls
         function openModal() {
             document.getElementById('questionModal').classList.add('active');
         }
