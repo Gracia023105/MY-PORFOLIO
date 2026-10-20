@@ -158,7 +158,7 @@
             box-shadow: 0 0 35px var(--neon-pink), inset 0 0 25px rgba(255, 0, 127, 0.3);
         }
 
-        /* INSPIRATION STYLE HERO FORMAT (Wala nang side box, full width text) */
+        /* HERO FORMAT */
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
@@ -169,12 +169,7 @@
         .tag-sub { color: var(--neon-pink); font-size: 0.85rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.8rem; text-shadow: 0 0 8px var(--neon-pink); display: flex; align-items: center; gap: 8px; }
         .status-dot { width: 8px; height: 8px; background-color: var(--neon-pink); border-radius: 50%; box-shadow: 0 0 8px var(--neon-pink); display: inline-block; }
         
-        .hero-name { font-size: 3.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 0.6rem; letter-spacing: -1px; }
-        .hero-name span { color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink); }
-        
-        .hero-course { font-size: 1.3rem; color: #f8fafc; font-weight: 700; margin-bottom: 1.2rem; text-shadow: 0 0 10px rgba(255, 0, 127, 0.4); }
-        
-        .hero-about { color: var(--text-sub); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; max-width: 800px; }
+        .hero-about { color: var(--text-sub); font-size: 1.15rem; line-height: 1.8; margin-bottom: 0; max-width: 850px; }
 
         .btn-pink {
             display: inline-flex;
@@ -194,24 +189,6 @@
         }
 
         .btn-pink:hover { box-shadow: 0 0 35px var(--neon-pink), 0 0 50px var(--neon-pink); transform: scale(1.03); }
-
-        .btn-outline-pink {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            border: 2px solid var(--neon-pink);
-            color: var(--neon-pink);
-            padding: 0.8rem 1.8rem;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-pink:hover { background: var(--neon-pink); color: #000; box-shadow: 0 0 30px var(--neon-pink); }
 
         /* 🌀 MOVING SKILLS MARQUEE 🌀 */
         .marquee-wrapper {
@@ -387,7 +364,6 @@
 
         @media(max-width: 900px) {
             .anime-bg-container { opacity: 0.2; }
-            .hero-name { font-size: 2.3rem; }
             .nav-menu { display: none; }
             .timeline-meta div { justify-content: flex-start; }
             .timeline-header { flex-direction: column; align-items: flex-start; }
@@ -434,26 +410,16 @@
     <!-- CONTAINER NG MGA CARDS -->
     <div class="container">
 
-        <!-- ABOUT ME SECTION (INSPIRATION STYLE - WALA NANG BILOG SA KANAN) -->
+        <!-- ABOUT ME SECTION -->
         <div class="pink-card" id="about">
             <div class="hero-content">
                 <div class="tag-sub">
-                    <span class="status-dot"></span> GRADUATING COMPUTER ENGINEERING STUDENT
+                    <span class="status-dot"></span> ABOUT ME
                 </div>
-                
-                <h1 class="hero-name">Hi, I'm <span>Mary Grace B. Montepalco</span></h1>
-                <div class="hero-course">Bachelor of Science in Computer Engineering</div>
                 
                 <p class="hero-about">
                     As a Computer Engineering student, I am eager to further expand my knowledge in Software. Although my work experiences are different from my current course, I firmly believe that "Facing various challenges at work leads to meaningful growth."
                 </p>
-
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#experience" class="btn-pink">
-                        View Experience <i class="fa-solid fa-arrow-down"></i>
-                    </a>
-                    <button onclick="openModal()" class="btn-outline-pink">Get In Touch</button>
-                </div>
             </div>
 
             <!-- 🌀 MOVING SKILLS MARQUEE 🌀 -->
